@@ -9,7 +9,7 @@ namespace DoAnMonHoc_Backend.Models
         [ForeignKey("UserId")]
         public User User { get; set; }
         public string ShippingInfo { get; set; }
-        public DateTime IssuePaid { get; set; }
+        public DateTime IssueDate { get; set; }
         public int TotalPrice { get; set; }
         public int TotalPriceAfterDiscount { get; set; }
         public int CouponId { get; set; }

@@ -19,7 +19,6 @@
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
         public List<Product> Products { get; set; }
-        public int ImageId { get; set; }
-        public Image Image { get; set; }
+        public string FileHinh { get; set; }    
     }
 }

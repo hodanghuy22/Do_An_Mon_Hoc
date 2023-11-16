@@ -1,4 +1,6 @@
 using DoAnMonHoc_Backend.Data;
+using DoAnMonHoc_Backend.Helpers;
+using DoAnMonHoc_Backend.Interfaces;
 using DoAnMonHoc_Backend.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -9,7 +11,7 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddDbContext<CSDLContext>(options =>
     options.
     UseSqlServer(builder.Configuration.GetConnectionString("DoAnMonHoc")
@@ -50,6 +52,7 @@ builder.Services.AddCors(option =>
               .AllowAnyHeader();
     });
 });
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

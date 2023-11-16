@@ -7,6 +7,7 @@ namespace DoAnMonHoc_Backend.Models
         public string Name { get; set; }
         public int Age { get; set; }
         public string Address { get; set; }
+        public string FileHinh { get; set; }
         public List<Comment> Comments { get; set; } 
         public List<Invoice> Invoices { get; set; } 
     }

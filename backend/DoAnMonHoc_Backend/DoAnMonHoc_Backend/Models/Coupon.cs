@@ -7,9 +7,10 @@
         public string Code { get; set; }
         public int DiscountPercent { get; set; }
         public int DiscountMoney { get; set; }
-        public int LimitMoney { get; set; }
-        public DateTime DateStart { get; set; }
-        public DateTime Expiry { get; set; }
+        public int RequiredTotal { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        public int Quantity { get; set; }
         public bool Status { get; set; }
         public List<Invoice> Invoices { get;}
     }
