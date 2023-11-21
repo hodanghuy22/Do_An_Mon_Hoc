@@ -105,6 +105,10 @@ namespace DoAnMonHoc_Backend.Repository
                 var errorResponse = new { Message = "Something went wrong!" };
                 return new BadRequestObjectResult(errorResponse);
             }
+            if (await _roleManager.RoleExistsAsync("User"))
+            {
+                await _userManager.AddToRoleAsync(user, "User");
+            }
             return new OkResult();
 
         }

@@ -5,9 +5,9 @@
 *.pack
 *.pack.old
 
-backend/DoAnMonHoc_Backend/.vs
-backend/DoAnMonHoc_Backend/DoAnMonHoc_Backend/bin/
-backend/DoAnMonHoc_Backend/DoAnMonHoc_Backend/obj/
+DoAnMonHoc_Backend/.vs
+DoAnMonHoc_Backend/DoAnMonHoc_Backend/bin/
+DoAnMonHoc_Backend/DoAnMonHoc_Backend/obj/
 
 .vscode/
 my-app/node_modules/.bin/

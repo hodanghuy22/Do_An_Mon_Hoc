@@ -27,9 +27,11 @@ namespace DoAnMonHoc_Backend.Data
         public IUserRepositoty UserRepositoty =>
                 new UserRepository(_context, _userManager, _roleManager, _configuration,_mapper);
 
-        public Task<bool> SaveAsync()
+        public IProductTypeRepository ProductTypeRepository =>
+            new ProductTypeRepository(_context);
+        public async Task<bool> SaveAsync()
         {
-            throw new NotImplementedException();
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }

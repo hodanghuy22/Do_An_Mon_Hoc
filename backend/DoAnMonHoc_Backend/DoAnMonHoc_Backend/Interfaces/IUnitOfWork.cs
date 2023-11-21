@@ -3,6 +3,7 @@
     public interface IUnitOfWork
     {
         IUserRepositoty UserRepositoty { get; }
+        IProductTypeRepository ProductTypeRepository { get; }
         Task<bool> SaveAsync();
     }
 }
