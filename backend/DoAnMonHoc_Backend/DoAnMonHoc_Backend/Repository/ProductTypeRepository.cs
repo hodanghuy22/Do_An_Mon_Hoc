@@ -24,7 +24,7 @@ namespace DoAnMonHoc_Backend.Repository
         {
             var pt = await GetProductType(id);
 
-            pt.Status = "False";
+            pt.Status = false;
         }
 
         public async Task<ProductType> GetProductType(int id)

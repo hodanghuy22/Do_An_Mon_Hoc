@@ -9,6 +9,8 @@ namespace DoAnMonHoc_Backend.Helpers
         public AutoMapperProfiles()
         {
             CreateMap<User, UserDto>();
+            CreateMap<Brand, BrandDto>();
+            CreateMap<Color, ColorDto>();
         }
     }
 }

@@ -29,6 +29,15 @@ namespace DoAnMonHoc_Backend.Data
 
         public IProductTypeRepository ProductTypeRepository =>
             new ProductTypeRepository(_context);
+        public IBrandRepository BrandRepository =>
+            new BrandRepository(_context);
+
+        public IColorRepository ColorRepository => 
+            new ColorRepository(_context);
+
+        public ICapacityRepository CapacityRepository =>
+            new CapacityRepository(_context);
+
         public async Task<bool> SaveAsync()
         {
             return await _context.SaveChangesAsync() > 0;

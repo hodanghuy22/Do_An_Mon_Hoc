@@ -47,7 +47,7 @@ namespace DoAnMonHoc_Backend.Controllers
         [HttpPut]
         [Route("{id}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> UpdateProduct(int id, ProductType productType)
+        public async Task<IActionResult> UpdateProductType(int id, ProductType productType)
         {
             if(id != productType.Id)
             {
@@ -56,9 +56,9 @@ namespace DoAnMonHoc_Backend.Controllers
             return await _uow.ProductTypeRepository.UpdateProductType(productType);
         }
         [HttpPut]
-        [Route("DeleteProduct/{id}")]
+        [Route("DeleteProductType/{id}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<IActionResult> DeleteProductType(int id)
         {
             var pt = await _uow.ProductTypeRepository.GetProductType(id);
             if(pt == null)
@@ -67,10 +67,6 @@ namespace DoAnMonHoc_Backend.Controllers
             }
             await _uow.ProductTypeRepository.DeleteProductType(id);
             var result = await _uow.SaveAsync();
-            if (!result)
-            {
-                return BadRequest();
-            }
             return Ok();
         }
     }

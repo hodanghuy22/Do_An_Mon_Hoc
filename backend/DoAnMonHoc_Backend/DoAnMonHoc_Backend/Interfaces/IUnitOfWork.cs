@@ -4,6 +4,9 @@
     {
         IUserRepositoty UserRepositoty { get; }
         IProductTypeRepository ProductTypeRepository { get; }
+        IBrandRepository BrandRepository { get; }
+        IColorRepository ColorRepository { get; }
+        ICapacityRepository CapacityRepository { get; }
         Task<bool> SaveAsync();
     }
 }

@@ -1,9 +1,10 @@
-﻿namespace DoAnMonHoc_Backend.Models
+﻿namespace DoAnMonHoc_Backend.Dto
 {
-    public class ProductType
+    public class BrandDto
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public string FileHinh { get; set; }
         public bool Status { get; set; }
     }
 }
