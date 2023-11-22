@@ -2,6 +2,7 @@ using DoAnMonHoc_Backend.Data;
 using DoAnMonHoc_Backend.Helpers;
 using DoAnMonHoc_Backend.Interfaces;
 using DoAnMonHoc_Backend.Models;
+using DoAnMonHoc_Backend.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IPhotoService, PhotoService>();
 builder.Services.AddDbContext<CSDLContext>(options =>
     options.
     UseSqlServer(builder.Configuration.GetConnectionString("DoAnMonHoc")

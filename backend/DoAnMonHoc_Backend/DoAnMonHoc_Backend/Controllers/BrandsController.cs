@@ -13,11 +13,13 @@ namespace DoAnMonHoc_Backend.Controllers
     {
         private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
+        private readonly IPhotoService _photoService;
 
-        public BrandsController(IUnitOfWork uow, IMapper mapper)
+        public BrandsController(IUnitOfWork uow, IMapper mapper, IPhotoService photoService)
         {
             _uow = uow;
             _mapper = mapper;
+            _photoService = photoService;
         }
         [HttpGet]
         public async Task<IActionResult> GetBrands()
@@ -76,6 +78,17 @@ namespace DoAnMonHoc_Backend.Controllers
             var result = await _uow.SaveAsync();
             return Ok();
         }
-
+        [HttpPost("add/photo/{id}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> AddBrandPhoto(IFormFile file, int BrandId)
+        {
+            var result = await _photoService.UploadPhotoAsync(file);
+            if(result.Error != null)
+            {
+                return BadRequest(result.Error.Message);
+            }
+            string imageUrl = result?.SecureUrl?.ToString();
+            return Ok(imageUrl);
+        }
     }
 }
