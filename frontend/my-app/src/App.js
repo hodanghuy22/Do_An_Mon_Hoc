@@ -11,6 +11,7 @@ import DonHang from "./pages/DonHang";
 import Thongtindiachi from "./pages/Thongtindiachi";
 import AccountLayout from "./Components/AccountLayout";
 import DanhSachYeuThich from "./pages/DanhSachYeuThich";
+import Thanhtoan from "./pages/Thanhtoan";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/dtdd/1" element={<Detail />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/cart/thanh-toan" element={<Thanhtoan />} />
           <Route path="/dien-thoai" element={<DienThoai />} />
           <Route path="/lich-su-mua-hang" element={<AccountLayout />}>
             <Route index element={<DonHang />} />

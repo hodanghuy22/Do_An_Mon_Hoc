@@ -157,7 +157,7 @@ const Cart = () => {
                                     <Form.Check type="checkbox" label="Tôi đồng ý với Chính sách xử lý dữ liệu cá nhân của PHBshop" />
                                 </Form.Group>
 
-                                <Button type='submit' variant='btn btn-secondary' className='w-100 p-2'>ĐẶT HÀNG</Button>
+                                <Link to="/cart/thanh-toan" className='w-100 p-2 btn btn-secondary'>ĐẶT HÀNG</Link>
                             </Form>
                         </Col>
                     </Row>
