@@ -1,6 +1,6 @@
-﻿namespace DoAnMonHoc_Backend.Models
+﻿namespace DoAnMonHoc_Backend.Dto
 {
-    public class Phone
+    public class PhoneDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -17,8 +17,6 @@
         public int SoLuong { get; set; }
         public bool Status { get; set; }
         public int BrandId { get; set; }
-        public Brand Brand { get; set; }
-        public List<Product> Products { get; set; }
-        public string FileHinh { get; set; }    
+        public string FileHinh { get; set; }
     }
 }
