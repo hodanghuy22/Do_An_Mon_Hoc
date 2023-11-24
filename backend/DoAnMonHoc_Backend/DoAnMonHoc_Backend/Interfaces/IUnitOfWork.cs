@@ -10,6 +10,7 @@
         IPhoneRepository PhoneRepository { get; }
         IProductTypeDetailRepository ProductTypeDetailRepository { get; }
         IProductRepository ProductRepository { get; }
+        IWishlistRepository WishlistRepository { get; }
         Task<bool> SaveAsync();
     }
 }
