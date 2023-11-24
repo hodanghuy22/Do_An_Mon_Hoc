@@ -7,6 +7,9 @@
         IBrandRepository BrandRepository { get; }
         IColorRepository ColorRepository { get; }
         ICapacityRepository CapacityRepository { get; }
+        IPhoneRepository PhoneRepository { get; }
+        IProductTypeDetailRepository ProductTypeDetailRepository { get; }
+        IProductRepository ProductRepository { get; }
         Task<bool> SaveAsync();
     }
 }

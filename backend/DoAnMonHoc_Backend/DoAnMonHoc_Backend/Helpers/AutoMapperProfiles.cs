@@ -8,9 +8,9 @@ namespace DoAnMonHoc_Backend.Helpers
     {
         public AutoMapperProfiles()
         {
-            CreateMap<User, UserDto>();
-            CreateMap<Brand, BrandDto>();
-            CreateMap<Color, ColorDto>();
+            CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<Brand, BrandDto>().ReverseMap();
+            CreateMap<Color, ColorDto>().ReverseMap();
         }
     }
 }

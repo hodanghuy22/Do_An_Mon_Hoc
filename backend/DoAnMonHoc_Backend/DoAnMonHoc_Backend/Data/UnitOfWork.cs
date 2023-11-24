@@ -38,6 +38,15 @@ namespace DoAnMonHoc_Backend.Data
         public ICapacityRepository CapacityRepository =>
             new CapacityRepository(_context);
 
+        public IPhoneRepository PhoneRepository => 
+            new PhoneRepository(_context);
+
+        public IProductTypeDetailRepository ProductTypeDetailRepository => 
+            new productTypeDetailRepository(_context);
+
+        public IProductRepository ProductRepository => 
+            new ProductRepository(_context);
+
         public async Task<bool> SaveAsync()
         {
             return await _context.SaveChangesAsync() > 0;

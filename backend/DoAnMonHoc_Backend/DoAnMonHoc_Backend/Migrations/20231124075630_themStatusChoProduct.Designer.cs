@@ -4,6 +4,7 @@ using DoAnMonHoc_Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoAnMonHoc_Backend.Migrations
 {
     [DbContext(typeof(CSDLContext))]
-    partial class CSDLContextModelSnapshot : ModelSnapshot
+    [Migration("20231124075630_themStatusChoProduct")]
+    partial class themStatusChoProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -201,6 +203,9 @@ namespace DoAnMonHoc_Backend.Migrations
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
@@ -744,7 +749,7 @@ namespace DoAnMonHoc_Backend.Migrations
             modelBuilder.Entity("DoAnMonHoc_Backend.Models.Image", b =>
                 {
                     b.HasOne("DoAnMonHoc_Backend.Models.Product", "Product")
-                        .WithMany("Images")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -808,13 +813,13 @@ namespace DoAnMonHoc_Backend.Migrations
                         .IsRequired();
 
                     b.HasOne("DoAnMonHoc_Backend.Models.Color", "Color")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DoAnMonHoc_Backend.Models.Phone", "Phone")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("PhoneId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -930,6 +935,11 @@ namespace DoAnMonHoc_Backend.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("DoAnMonHoc_Backend.Models.Color", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("DoAnMonHoc_Backend.Models.Comment", b =>
                 {
                     b.Navigation("ChildComments");
@@ -945,9 +955,9 @@ namespace DoAnMonHoc_Backend.Migrations
                     b.Navigation("InvoiceDetails");
                 });
 
-            modelBuilder.Entity("DoAnMonHoc_Backend.Models.Product", b =>
+            modelBuilder.Entity("DoAnMonHoc_Backend.Models.Phone", b =>
                 {
-                    b.Navigation("Images");
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("DoAnMonHoc_Backend.Models.User", b =>

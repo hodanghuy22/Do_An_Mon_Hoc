@@ -8,6 +8,7 @@
         public int ProductId { get; set; }
         public Product Product { get; set; }    
         public string Comment { get; set; }
+        public string HinhPublicId { get; set; }
         public string FileHinh { get; set; }
         public int Star { get; set; }
         public DateTime NgayDang { get; set; }
