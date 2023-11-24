@@ -18,7 +18,8 @@
         public bool Status { get; set; }
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
-        public List<Product> Products { get; set; }
+        //public List<Product> Products { get; set; }
+        public string HinhPublicId { get; set; }
         public string FileHinh { get; set; }    
     }
 }

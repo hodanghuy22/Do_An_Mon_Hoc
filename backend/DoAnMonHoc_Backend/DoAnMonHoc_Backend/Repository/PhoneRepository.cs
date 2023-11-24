@@ -27,12 +27,14 @@ namespace DoAnMonHoc_Backend.Repository
 
         public async Task<Phone> GetPhone(int id)
         {
-            return await _context.Phones.FindAsync(id);
+            return await _context.Phones.Include(p => p.Brand)
+                .FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<IEnumerable<Phone>> GetPhones()
         {
-            return await _context.Phones.ToListAsync();
+            return await _context.Phones.Include(p => p.Brand)
+                .ToListAsync();
         }
 
         public async Task<bool> PhoneExist(int id)

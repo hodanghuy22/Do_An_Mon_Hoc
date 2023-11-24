@@ -4,6 +4,7 @@ using DoAnMonHoc_Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DoAnMonHoc_Backend.Migrations
 {
     [DbContext(typeof(CSDLContext))]
-    partial class CSDLContextModelSnapshot : ModelSnapshot
+    [Migration("20231123033744_init6")]
+    partial class init6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -128,9 +130,6 @@ namespace DoAnMonHoc_Backend.Migrations
                     b.Property<string>("FileHinh")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HinhPublicId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -196,11 +195,11 @@ namespace DoAnMonHoc_Backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("HinhPublicId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
@@ -311,9 +310,6 @@ namespace DoAnMonHoc_Backend.Migrations
                     b.Property<string>("FileHinh")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HinhPublicId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("KichThuoc")
                         .HasColumnType("nvarchar(max)");
 
@@ -373,9 +369,6 @@ namespace DoAnMonHoc_Backend.Migrations
 
                     b.Property<int>("SoldQuantity")
                         .HasColumnType("int");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -442,9 +435,6 @@ namespace DoAnMonHoc_Backend.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FileHinh")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HinhPublicId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("NgayDang")
@@ -704,7 +694,7 @@ namespace DoAnMonHoc_Backend.Migrations
             modelBuilder.Entity("DoAnMonHoc_Backend.Models.Cart", b =>
                 {
                     b.HasOne("DoAnMonHoc_Backend.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("Carts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -725,7 +715,7 @@ namespace DoAnMonHoc_Backend.Migrations
                         .HasForeignKey("CommentId");
 
                     b.HasOne("DoAnMonHoc_Backend.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("Comments")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -778,7 +768,7 @@ namespace DoAnMonHoc_Backend.Migrations
                         .IsRequired();
 
                     b.HasOne("DoAnMonHoc_Backend.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("InvoiceDetails")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -791,7 +781,7 @@ namespace DoAnMonHoc_Backend.Migrations
             modelBuilder.Entity("DoAnMonHoc_Backend.Models.Phone", b =>
                 {
                     b.HasOne("DoAnMonHoc_Backend.Models.Brand", "Brand")
-                        .WithMany()
+                        .WithMany("Phones")
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -808,13 +798,13 @@ namespace DoAnMonHoc_Backend.Migrations
                         .IsRequired();
 
                     b.HasOne("DoAnMonHoc_Backend.Models.Color", "Color")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DoAnMonHoc_Backend.Models.Phone", "Phone")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("PhoneId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -865,7 +855,7 @@ namespace DoAnMonHoc_Backend.Migrations
             modelBuilder.Entity("DoAnMonHoc_Backend.Models.WishList", b =>
                 {
                     b.HasOne("DoAnMonHoc_Backend.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("WishLists")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -930,6 +920,16 @@ namespace DoAnMonHoc_Backend.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("DoAnMonHoc_Backend.Models.Brand", b =>
+                {
+                    b.Navigation("Phones");
+                });
+
+            modelBuilder.Entity("DoAnMonHoc_Backend.Models.Color", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("DoAnMonHoc_Backend.Models.Comment", b =>
                 {
                     b.Navigation("ChildComments");
@@ -945,9 +945,22 @@ namespace DoAnMonHoc_Backend.Migrations
                     b.Navigation("InvoiceDetails");
                 });
 
+            modelBuilder.Entity("DoAnMonHoc_Backend.Models.Phone", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("DoAnMonHoc_Backend.Models.Product", b =>
                 {
+                    b.Navigation("Carts");
+
+                    b.Navigation("Comments");
+
                     b.Navigation("Images");
+
+                    b.Navigation("InvoiceDetails");
+
+                    b.Navigation("WishLists");
                 });
 
             modelBuilder.Entity("DoAnMonHoc_Backend.Models.User", b =>

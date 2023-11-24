@@ -13,10 +13,11 @@
         public Capacity Capacity { get; set; }
         public int ColorId { get; set; }
         public Color Color { get; set; }
+        public bool Status { get; set; }
         public List<Image> Images { get; set; }
-        public List<Comment> Comments { get; set; }
-        public List<Cart> Carts { get; set; }
-        public List<WishList> WishLists { get; set; }
-        public List<InvoiceDetail> InvoiceDetails { get; set; }
+        //public List<Comment> Comments { get; set; }
+        //public List<Cart> Carts { get; set; }
+        //public List<WishList> WishLists { get; set; }
+        //public List<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }
