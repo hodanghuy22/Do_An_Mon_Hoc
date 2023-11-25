@@ -1,4 +1,6 @@
-﻿namespace DoAnMonHoc_Backend.Models
+﻿using System.Text.Json.Serialization;
+
+namespace DoAnMonHoc_Backend.Models
 {
     public class InvoiceDetail
     {

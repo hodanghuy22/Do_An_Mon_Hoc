@@ -50,6 +50,15 @@ namespace DoAnMonHoc_Backend.Data
         public IWishlistRepository WishlistRepository => 
             new WishlistRepository(_context);
 
+        public ICouponRepository CouponRepository => 
+            new CouponRepository(_context);
+
+        public IInvoiceRepository InvoiceRepository => 
+            new InvoiceRepository(_context);
+
+        public IInvoiceDetailRepository InvoiceDetailRepository => 
+            new InvoiceDetailRepository(_context);
+
         public async Task<bool> SaveAsync()
         {
             return await _context.SaveChangesAsync() > 0;

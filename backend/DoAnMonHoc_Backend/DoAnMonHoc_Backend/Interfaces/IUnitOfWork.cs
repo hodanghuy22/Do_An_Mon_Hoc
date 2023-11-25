@@ -11,6 +11,9 @@
         IProductTypeDetailRepository ProductTypeDetailRepository { get; }
         IProductRepository ProductRepository { get; }
         IWishlistRepository WishlistRepository { get; }
+        ICouponRepository CouponRepository { get; }
+        IInvoiceRepository InvoiceRepository { get; }
+        IInvoiceDetailRepository InvoiceDetailRepository { get; }
         Task<bool> SaveAsync();
     }
 }

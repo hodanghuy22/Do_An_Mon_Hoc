@@ -1,4 +1,6 @@
-﻿namespace DoAnMonHoc_Backend.Models
+﻿using System.Text.Json.Serialization;
+
+namespace DoAnMonHoc_Backend.Models
 {
     public class Coupon
     {
@@ -12,6 +14,7 @@
         public DateTime EndDate { get; set; }
         public int Quantity { get; set; }
         public bool Status { get; set; }
+        [JsonIgnore]
         public List<Invoice> Invoices { get;}
     }
 }
