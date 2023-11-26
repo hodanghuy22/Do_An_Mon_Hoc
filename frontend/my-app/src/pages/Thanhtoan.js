@@ -1,23 +1,42 @@
-import React from 'react'
-import { Button, Col, Container, FormControl, Image, InputGroup, Row } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Button, Col, Container, Image,  Row } from 'react-bootstrap'
 import { IoMdArrowBack } from "react-icons/io";
+import { MdPayment } from "react-icons/md";
 import { Link } from 'react-router-dom';
+
 const Thanhtoan = () => {
+    const [selectedTab, setSelectedTab] = useState('thongTin');
+
+    const handleTabChange = (tab) => {
+        setSelectedTab(tab);
+    };
     return (
         <div>
             <Container className='w-50 m-auto '>
                 <Row >
-                    <Link to="/dien-thoại" className='text-center w-100 bg-info'><IoMdArrowBack className='float-left mt-2 h3' /> <p className='h4 mt-2'>Thông tin</p></Link>
+                    <p className='text-center w-100 bg-transparent'><Link to="/cart"><IoMdArrowBack className='float-left mt-2 h3' /></Link> <p className='h4 mt-2'>THANH TOÁN</p></p>
                 </Row>
                 <Row className='mt-2 border-top text-center '>
-                    <Col className='mr-2  border-bottom border-danger text-danger font-weight-bold'>
-                        1.THÔNG TIN
+                    <Col className={`mr-2 ${selectedTab === 'thongTin' ? 'border-bottom border-danger text-danger font-weight-bold' : ''}`}>
+                        <button
+                            id="btnThongTin"
+                            className={`p-2 w-100 ${selectedTab === 'text-danger' ? 'secondary' : ''} border-0 bg-transparent focus-outline-none ${selectedTab === 'thongTin' ? 'selected' : ''}`}
+                            onClick={() => handleTabChange('thongTin')}
+                        >
+                            1. THÔNG TIN
+                        </button>
                     </Col>
-                    <Col className='ml-2 border-bottom border-gray  font-weight-bold'>
-                        2.THANH TOÁN
+                    <Col className={`ml-2 ${selectedTab === 'thanhToan' ? 'border-bottom border-danger text-danger font-weight-bold' : 'border-bottom border-gray font-weight-bold'}`}>
+                        <button
+                            id="btnThanhToan"
+                            className={`p-2 w-100  ${selectedTab === 'text-danger' ? 'secondary' : ''}  border-0 bg-transparent focus-outline-none ${selectedTab === 'thanhToan' ? 'selected' : ''}`}
+                            onClick={() => handleTabChange('thanhToan')}
+                        >
+                            2. THANH TOÁN
+                        </button>
                     </Col>
                 </Row>
-                <div>
+                <div id="thongTin" style={{ display: selectedTab === 'thongTin' ? 'block' : 'none' }}>
                     <Row className=' pb-2 mb-4   mt-4 bg-light shadow p-4 mb-5 bg-white rounded'>
                         <Col xl={2} md={2} sm={2} className='p-2'>
                             <Image src='https://bit.ly/3ul4poY' width={'75px'} />
@@ -95,35 +114,51 @@ const Thanhtoan = () => {
                         </div>
                     </Row>
                     <Row>
-                        <Button variant='text-danger'>Thanh toán</Button>
+                        <Button variant='text-danger bg-danger w-100 text-light' onClick={() => handleTabChange('thanhToan')}>Tiếp tục</Button>
+
                     </Row>
                 </div>
-                <div>
-                    <div>
-                        <input type='text' placeholder='Nhập mã giảm giá (chỉ ap dụng 1 lần)' className='float-lèt' />
-                        <p><span className='float-left btn btn-danger'>Áp dụng</span><input type='text' placeholder='Nhập mã giảm giá (chỉ ap dụng 1 lần)' className='float-lèt' /></p>
-                        <p><span className='float-right'></span></p>
+                <div id="thanhToan" style={{ display: selectedTab === 'thanhToan' ? 'block' : 'none' }} className='mt-4'>
+                    <div className='bg-light shadow p-4 mb-5 bg-white rounded'>
+                        <p>
+                            <input type='text' placeholder='Nhập mã giảm giá (chỉ ap dụng 1 lần)' className='w-75  py-2 ' />
+                            <span className=' float-right btn btn-danger '>Áp dụng</span>
+                        </p>
+                        <p>
+                            <span className='float-right'></span>
+                        </p>
                         <p>Số lượng sản phẩm <span className='float-right'>02</span></p>
                         <p>Tiền hàng (tạm tính) <span className='float-right'>3.380.000đ</span></p>
                         <p>Phí vận chuyển<span className='float-right'>02</span></p>
-                        <p>Tổng tiền đã bao gồm VAT <span className='float-right'>3.380.000đ</span></p>
+                        <hr />
+                        <p className=''>Tổng tiền đã bao gồm VAT <span className='float-right h5 font-weight-bold'>3.380.000đ</span></p>
                     </div>
                     <div>
                         <h4>THÔNG TIN THANH TOÁN</h4>
-                        <h4>Chọn phương thức thanh toán</h4>
+                        <div className='bg-light shadow p-4 mb-5 bg-white rounded'>
+                            <h5><MdPayment style={{ fontSize: '40px' }} className='mr-3' /><span className='text-danger'>Chọn phương thức thanh toán</span></h5>
+                        </div>
                     </div>
                     <div>
-                        <p>Khách hàng<span className='float-right'>Pham Bình</span></p>
-                        <p>Số diện thoại <span className='float-right'>0329155867</span></p>
-                        <p>Emnail <span className='float-right'>02</span></p>
-                        <p>Tiền hàng (tạm tính) <span className='float-right'>3.380.000đ</span></p>
+                        <h4>THÔNG TIN NHẬN HÀNG</h4>
+                        <div className='bg-light shadow p-4 mb-5 bg-white rounded'>
+
+                        <p>Khách hàng:<span className='float-right'>Pham Bình</span></p>
+                        <p>Số diện thoại: <span className='float-right'>0329155867</span></p>
+                        <p>Email: <span className='float-right'>0306211331@caothang.edu.vn</span></p>
+                            <p>Nhận hàng tại: <span className='float-right'>65 Huỳnh Thúc Kháng, P.Bến Nghé, Q.1, Tp.HCM</span></p>
+                        </div>
                     </div>
-                    <Row>
+                    <Row className='bg-light shadow p-3 mb-5 bg-white rounded'>
+                        <p><span className='font-weight-bold mr-2'>Tổng tiền tạm tính:</span> <span className='text-danger font-weight-bold'>3.3380.000đ</span></p>
                         <Button variant='text-danger bg-danger w-100 text-light'>Thanh toán</Button>
                     </Row>
                 </div>
             </Container>
+                
+         
         </div>
+        
     )
 }
 

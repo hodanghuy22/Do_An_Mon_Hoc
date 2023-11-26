@@ -2,6 +2,7 @@ import { FiSearch, FiSmartphone } from "react-icons/fi";
 import { FaComputer } from "react-icons/fa6";
 import { BiHeadphone } from "react-icons/bi";
 import { FaRegUser } from "react-icons/fa";
+import { GoMoveToTop } from "react-icons/go";
 import { BsCartCheck, BsPhone, BsLaptop, BsTabletLandscape, BsSmartwatch } from "react-icons/bs";
 import React, { useEffect, useState } from 'react'
 import { Navbar, Nav, Form, FormControl, Button, Modal } from 'react-bootstrap';
@@ -9,6 +10,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link, Outlet } from "react-router-dom";
+import Footer from "./Footer";
 const Mainlayout = () => {
     const [show, setShow] = useState(false);
     const [isLogin, setIsLogin] = useState(true);
@@ -27,13 +29,9 @@ const Mainlayout = () => {
         handleClose();
     };
 
-
-    const [showButton, setShowButton] = useState(false);
-
     useEffect(() => {
         const handleScroll = () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            setShowButton(scrollTop > 500); // Hiển thị nút khi người dùng cuộn xuống 500px
+
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -43,35 +41,37 @@ const Mainlayout = () => {
         };
     }, []);
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+    const handleScrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
 
         <>
-            <div className='m-auto' style={{ width: 1200 }}>
-                <header className="mb-3 ">
+            <div className='m-auto bg-secondary p-3' >
+
+                <header className="m-auto " style={{ width: 1200 }}>
                     <Navbar bg="body-tertiary" className="p-0 pt-2 pb-2 mb-4 ">
                         <Container fluid>
-
-                            <Link to="/">
-                                <img src='/logo_no_bachground.png' width={40} alt="Logo" />
-                                PHBshop
+                            <div className="bg-warning w-25">
+                            <Link to="/" style={{fontSize:'28px'}}>
+                                <img src='/logo_no_bachground.png' width={50} alt="Logo" />
+                                <span className="">PHBshop</span> 
                             </Link>
+                            </div>
                             <Navbar.Toggle aria-controls="navbarSupportedContent" />
                             <div className="d-flex ml-auto">
 
                                 <Navbar.Collapse id="navbarSupportedContent">
                                     <Form className="d-flex ml-2 mr-2" role="search">
-                                        <FormControl type="search" placeholder="Bạn tìm gì" aria-label="Bạn tìm gì" />
-                                        <Button variant="outline-secondary" onClick={handleShow}><FiSearch /></Button>
+                                        <div className="d-flex bg-light">
+
+                                            <FormControl type="search" placeholder="Bạn tìm gì" aria-label="Bạn tìm gì" />
+                                            <Button variant="outline-secondary" ><FiSearch /></Button>
+                                        </div>
                                     </Form>
                                     <Nav className="me-auto mb-2 mb-lg-0">
-                                        <Link to='/lich-su-mua-hang' active className="btn btn-warning ml-2 mr-2">Tài khoản và đơn hàng</Link>
+                                        <Link to='/user' active className="btn btn-warning ml-2 mr-2">Tài khoản và đơn hàng</Link>
                                         <Link to="/cart" className="btn btn-warning ml-2 mr-2"><BsCartCheck /> Giỏ hàng</Link>
                                         <Button className="btn btn-warning ml-2 mr-2" onClick={handleShow}><FaRegUser /> Đăng Nhập</Button>
                                         {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown" className="ml-2 mr-2">
@@ -100,44 +100,20 @@ const Mainlayout = () => {
                         </Row>
                     </Container>
                 </header>
+            </div>
+            <div className='m-auto' style={{ width: 1200 }}>
 
-                <main className="mt-3">
+                <main className="mt-5 mb-5">
                     <Outlet />
                 </main>
+                <footer className='m-auto' style={{ width: 1200 }}>
+                    <Footer />
+                </footer>
 
-                <Container className='mt-5'>
-                    <Row>
-                        Footer
-                    </Row>
-                    <Row>
-                        <Col xl>
-                            <ul>
-                                <li>Item 1</li>
-                                <li>Item 2</li>
-                                <li>Item 3</li>
-                            </ul>
-                        </Col>
-                        <Col xl>
-                            <ul>
-                                <li>Item 1</li>
-                                <li>Item 2</li>
-                                <li>Item 3</li>
-                            </ul>
-
-                        </Col>
-                        <Col xl>
-                            <ul>
-                                <li>Item 1</li>
-                                <li>Item 2</li>
-                                <li>Item 3</li>
-                            </ul>
-                        </Col>
-                    </Row>
-                    <Row xl={12} md={12}>
-                        <h3>Hồ Đăng Huy - Nguyễn Minh Phát - Phạm Quảng Bình</h3>
-                    </Row>
-                </Container>
             </div>
+
+
+
             <Modal show={show} onHide={handleClose} style={{ marginTop: '10%' }}>
                 <Modal.Header >
                     <Modal.Title>{isLogin ? 'Đăng Nhập' : 'Đăng Ký'}</Modal.Title>
@@ -174,11 +150,10 @@ const Mainlayout = () => {
                     </p>
                 </Modal.Footer>
             </Modal>
-            {showButton && (
-                <Button variant="primary" className="fixed-bottom float-right" onClick={scrollToTop} style={{ width: '80px', marginBottom: '40px', position: 'fixed', right: '10px' }}>
-                    Top
-                </Button>
-            )}
+
+            <button onClick={handleScrollToTop} className="scroll-to-top-button mb-3">
+                <GoMoveToTop style={{ fontSize: '30px' }} />
+            </button>
 
         </>
     )

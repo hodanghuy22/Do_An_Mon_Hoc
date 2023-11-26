@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { AiTwotoneStar } from "react-icons/ai";
 import { RiRefund2Line } from "react-icons/ri";
 import { BsShieldCheck, BsBox } from "react-icons/bs";
+import { CiCirclePlus } from "react-icons/ci";
+import { BsCartCheck} from "react-icons/bs";
 import { Container, Row, Col, Carousel, Button, Table, Form } from 'react-bootstrap';
 const PhoneDetail = () => {
 
@@ -33,6 +35,10 @@ const PhoneDetail = () => {
                 <h5 style={{ display: 'inline-block' }}>Điện thoại iPhone 12 128GB</h5>
                 <Link style={{ color: 'yellow' }}><AiTwotoneStar /><AiTwotoneStar /><AiTwotoneStar /><AiTwotoneStar /><AiTwotoneStar /></Link>
                 <span>171 đánh giá</span>
+                <Link to="/so-sanh" className='ml-3' > 
+                    <CiCirclePlus className='mb-1' style={{ fontSize: '20px' }} />
+                    So sánh
+                </Link>
             </Container>
             <Container className='border-top'>
                 <Row>
@@ -520,7 +526,11 @@ const PhoneDetail = () => {
                                             </ul>
                                         </div>
                                         <div className='w-100'>
-                                            <Button variant="danger" className='w-100'>MUA NGAY GIÁ RẺ QUÁ </Button>
+                                            <div>
+                                                <Button variant="danger" className='' style={{ width: '73%', margin: '1%' }}>MUA NGAY GIÁ RẺ QUÁ </Button>
+                                                <Button variant="danger" className='' style={{ width: '23%', margin: '1%' }}><BsCartCheck style={{fontSize:'25px'}}/></Button>
+                                         
+                                            </div>
                                             <Button variant='primary' style={{ width: '48%', margin: '1%' }} className=' mt-1  '>MUA TRẢ GÓP</Button>
                                             <Button variant='primary' style={{ width: '48%', margin: '1%' }} className=' mt-1 '>TRẢ GÓP QUA THẺ</Button>
                                         </div>
