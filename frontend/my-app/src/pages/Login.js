@@ -1,35 +1,77 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Button, Form, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import CustomInput from '../Components/CustomInput';
 
 const Login = () => {
+  const [show, setShow] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleSwitch = () => {
+    setIsLogin(!isLogin);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Xử lý đăng nhập hoặc đăng ký tại đây
+    // ...
+    handleClose();
+  };
+
+
+  const [showButton, setShowButton] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setShowButton(scrollTop > 500); // Hiển thị nút khi người dùng cuộn xuống 500px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className='py-5' style={{ "background": "#ffd333", minHeight: "100vh" }}>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div className="my-5 w-25 bg-white rounded-3 mx-auto p-4">
-        <h3 className="text-center">Login</h3>
-        <p className="text-center">Login to your account to continue.</p>
-        <form action="">
-          <CustomInput type="text" Label="Email Address" id="email" />
-          <CustomInput type="password" Label="Password" id="pass" />
-          <div className="mb-3 text-end">
-            <Link to='forgot-password' className="">Forgot Password</Link>
-          </div>
-          <Link
-            to="/"
-            className="border-0 px-3 py-2 text-white fw-bold w-100 text-center text-decoration-none" style={{ background: "#ffd333" }}
-            type="submit"
-          >
-            Login
-          </Link>
-        </form>
-      </div>
-    </div>
+    <Modal show={show} onHide={handleClose} style={{ marginTop: '10%' }}>
+      <Modal.Header >
+        <Modal.Title>{isLogin ? 'Đăng Nhập' : 'Đăng Ký'}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form onSubmit={handleSubmit}>
+          {/* Các trường đăng nhập / đăng ký ở đây */}
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="Nhập Email" />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword" className="mt-2">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" placeholder="Nhập Mật Khẩu" />
+          </Form.Group>
+          <Button variant="primary" type="submit" className="mt-3">
+            {isLogin ? 'Đăng Nhập' : 'Đăng Ký'}
+          </Button>
+        </Form>
+
+
+
+      </Modal.Body>
+      <Modal.Footer>
+        <p >
+          <Link to='forgot-password' className="mr-3 text-primary btn">Quên mật khẩu</Link>
+          {isLogin
+            ? "Bạn chưa có tài khoản? "
+            : "Bạn đã có tài khoản? "}
+          <span className="auth-switch text-primary btn " onClick={handleSwitch}>
+            {isLogin ? 'Đăng Ký ngay!' : 'Đăng Nhập ngay!'}
+          </span>
+        </p>
+      </Modal.Footer>
+    </Modal>
   )
 }
 

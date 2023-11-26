@@ -1,86 +1,67 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
+import React, { useState } from 'react'
+import AllOrders from '../Components/DonHang/AllOrders';
+import PlacedOrders from '../Components/DonHang/PlacedOrders';
+import ConfirmedOrders from '../Components/DonHang/ConfirmedOrders';
+import DeliveringOrders from '../Components/DonHang/DeliveringOrders';
+import DeliveredOrders from '../Components/DonHang/DeliveredOrders';
+import CancelledOrders from '../Components/DonHang/CancelledOrders';
+
 
 
 const DonHang = () => {
+  const [selectedTab, setSelectedTab] = useState('Tất cả');
+
+  const handleTabClick = (tabName) => {
+    setSelectedTab(tabName);
+  };
+
+  const renderForm = () => {
+    switch (selectedTab) {
+      case 'Tất cả':
+        return <AllOrders />;
+      case 'Đã đặt':
+        return <PlacedOrders />;
+      case 'Đã xác nhận':
+        return <ConfirmedOrders />;
+      case 'Đang giao':
+        return <DeliveringOrders />;
+      case 'Đã giao':
+        return <DeliveredOrders />;
+      case 'Đã hủy':
+        return <CancelledOrders />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div>
-      <h5>Đơn hàng đã mua  <span>Từ ngày 19/11/2022 - 19/11/2023</span></h5>
-      <div className='bg-light shadow p-4 mb-3 bg-white rounded'>
-        <div className='d-flex'>
-          <div className='d-inline-block'>
-            <span className='font-weight-bold'>Đơn hàng: $72771045</span>
-            <span className='ml-3'>Giao Trước 10:00 - Chủ Nhật (27/08)</span>
-          </div>
-          <div className='ml-auto'>
-            <p className='text-danger'>Đã hủy</p>
-          </div>
+      <div className="bg-light shadow mb-3 bg-white rounded d-flex">
+        <div className={`pt-3 pb-3 w-25 ${selectedTab === 'Tất cả' ? 'border-bottom border-danger' : 'border-bottom'}`} style={{cursor:'pointer'}}>
+          <p className={`m-auto text-center ${selectedTab === 'Tất cả' ? 'text-danger' : ''}`} onClick={() => handleTabClick('Tất cả')}>Tất cả</p>
         </div>
-        <hr />
-        <div className='d-flex'>
-          <div className='d-flex'>
-            <img width='60px' height='60px' src='https://www.thegioididong.com/lich-su-mua-hang/images/no-image.jpg' alt='ảnh' />
-            <p className='w-75 ml-2'>Tai nghe Bluetooth TWS Mozard DS635-WB Đen</p>
-          </div>
-          <div className='ml-auto'>
-            <p>Tổng tiền: <span className='h5'>195.000đ</span></p>
-          </div>
+        <div className={`pt-3 pb-3 w-25 ml-2 ${selectedTab === 'Đã đặt' ? 'border-bottom border-danger' : 'border-bottom'}`} style={{cursor:'pointer'}}>
+          <p className={`m-auto text-center ${selectedTab === 'Đã đặt' ? 'text-danger' : ''}`} onClick={() => handleTabClick('Đã đặt')}>Đã đặt</p>
         </div>
-        <div className='ml-auto mt-2'>
-          <Button className=' btn-light border border-warning text-warning '>Xem chi tiết</Button>
+        <div className={`pt-3 pb-3 w-25 ml-2 ${selectedTab === 'Đã xác nhận' ? 'border-bottom border-danger' : 'border-bottom'}`} style={{cursor:'pointer'}}>
+          <p className={`m-auto text-center ${selectedTab === 'Đã xác nhận' ? 'text-danger' : ''}`} onClick={() => handleTabClick('Đã xác nhận')}>Đã xác nhận</p>
+        </div>
+        <div className={`pt-3 pb-3 w-25 ml-2 ${selectedTab === 'Đang giao' ? 'border-bottom border-danger' : 'border-bottom'}`} style={{cursor:'pointer'}}>
+          <p className={`m-auto text-center ${selectedTab === 'Đang giao' ? 'text-danger' : ''}`} onClick={() => handleTabClick('Đang giao')}>Đang giao</p>
+        </div>
+        <div className={`pt-3 pb-3 w-25 ml-2 ${selectedTab === 'Đã giao' ? 'border-bottom border-danger' : 'border-bottom'}`} style={{cursor:'pointer'}}>
+          <p className={`m-auto text-center ${selectedTab === 'Đã giao' ? 'text-danger' : ''}`} onClick={() => handleTabClick('Đã giao')}>Đã giao</p>
+        </div>
+        <div className={`pt-3 pb-3 w-25 ml-2 ${selectedTab === 'Đã hủy' ? 'border-bottom border-danger' : 'border-bottom'}`} style={{cursor:'pointer'}}>
+          <p className={`m-auto text-center ${selectedTab === 'Đã hủy' ? 'text-danger' : ''}`} onClick={() => handleTabClick('Đã hủy')}>Đãhủy</p>
         </div>
       </div>
-      <div className='bg-light shadow p-4 mb-3 bg-white rounded'>
-        <div className='d-flex'>
-          <div className='d-inline-block'>
-            <span className='font-weight-bold'>Đơn hàng: $72771045</span>
-            <span className='ml-3'>Giao Trước 10:00 - Chủ Nhật (27/08)</span>
-          </div>
-          <div className='ml-auto'>
-            <p className='text-danger'>Đã hủy</p>
-          </div>
-        </div>
-        <hr />
-        <div className='d-flex'>
-          <div className='d-flex'>
-            <img width='60px' height='60px' src='https://www.thegioididong.com/lich-su-mua-hang/images/no-image.jpg' alt='ảnh' />
-            <p className='w-75 ml-2'>Tai nghe Bluetooth TWS Mozard DS635-WB Đen</p>
-          </div>
-          <div className='ml-auto'>
-            <p>Tổng tiền: <span className='h5'>195.000đ</span></p>
-          </div>
-        </div>
-        <div className='ml-auto mt-2'>
-          <Button className=' btn-light border border-warning text-warning '>Xem chi tiết</Button>
-        </div>
+      <div>
+        {renderForm()}
       </div>
-      <div className='bg-light shadow p-4 mb-3 bg-white rounded'>
-        <div className='d-flex'>
-          <div className='d-inline-block'>
-            <span className='font-weight-bold'>Đơn hàng: $72771045</span>
-            <span className='ml-3'>Giao Trước 10:00 - Chủ Nhật (27/08)</span>
-          </div>
-          <div className='ml-auto'>
-            <p className='text-danger'>Đã hủy</p>
-          </div>
-        </div>
-        <hr />
-        <div className='d-flex'>
-          <div className='d-flex'>
-            <img width='60px' height='60px' src='https://www.thegioididong.com/lich-su-mua-hang/images/no-image.jpg' alt='anh' />
-            <p className='w-75 ml-2'>Tai nghe Bluetooth TWS Mozard DS635-WB Đen</p>
-          </div>
-          <div className='ml-auto'>
-            <p>Tổng tiền: <span className='h5'>195.000đ</span></p>
-          </div>
-        </div>
-        <div className='ml-auto mt-2'>
-          <Button className=' btn-light border border-warning text-warning '>Xem chi tiết</Button>
-        </div>
-      </div>
-
     </div>
-  )
-}
+  );
+};
+
 
 export default DonHang

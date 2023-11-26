@@ -30,14 +30,14 @@ const DienThoai = () => {
             </Breadcrumb>
             <Container className="my-2 flex-col rounded-lg md:bg-white md:p-3">
                 <Row className="no-scrollbar grid w-full grid-flow-row-dense grid-cols-8  items-center max-md:mb-2 max-md:flex  max-md:items-center max-md:justify-start max-md:overflow-x-scroll md:flex-wrap md:pb-2">
-                    <Nav.Link href="" className="mx-1 mb-2 flex items-center justify-center overflow-hidden rounded border-ddv border border-border grayscale  ">SamSung</Nav.Link>
-                    <Nav.Link href="" className="mx-1 mb-2 flex items-center justify-center overflow-hidden rounded border-ddv border border-border grayscale  ">vivo</Nav.Link>
-                    <Nav.Link href="" className="mx-1 mb-2 flex items-center justify-center overflow-hidden rounded border-ddv border border-border grayscale  ">OPPO</Nav.Link>
-                    <Nav.Link href="" className="mx-1 mb-2 flex items-center justify-center overflow-hidden rounded border-ddv border border-border grayscale  ">realme</Nav.Link>
-                    <Nav.Link href="" className="mx-1 mb-2 flex items-center justify-center overflow-hidden rounded border-ddv border border-border grayscale  ">xiaomi</Nav.Link>
-                    <Nav.Link href="" className="mx-1 mb-2 flex items-center justify-center overflow-hidden rounded border-ddv border border-border grayscale  ">Nokia</Nav.Link>
-                    <Nav.Link href="" className="mx-1 mb-2 flex items-center justify-center overflow-hidden rounded border-ddv border border-border grayscale  ">iPhone</Nav.Link>
-                    <Nav.Link href="" className="mx-1 mb-2 flex items-center justify-center overflow-hidden rounded border-ddv border border-border grayscale  ">Honor</Nav.Link>
+                    <Nav.Link href="" className="mx-1 mb-2 rounded border">SamSung</Nav.Link>
+                    <Nav.Link href="" className="mx-1 mb-2 rounded border">vivo</Nav.Link>
+                    <Nav.Link href="" className="mx-1 mb-2 rounded border">OPPO</Nav.Link>
+                    <Nav.Link href="" className="mx-1 mb-2 rounded border">realme</Nav.Link>
+                    <Nav.Link href="" className="mx-1 mb-2 rounded border">xiaomi</Nav.Link>
+                    <Nav.Link href="" className="mx-1 mb-2 rounded border">Nokia</Nav.Link>
+                    <Nav.Link href="" className="mx-1 mb-2 rounded border">iPhone</Nav.Link>
+                    <Nav.Link href="" className="mx-1 mb-2 rounded border">Honor</Nav.Link>
 
                 </Row>
                 <Button variant="primary" onClick={() => setShowModal(true)}>Chọn giá</Button>
@@ -215,9 +215,9 @@ const DienThoai = () => {
             </Container>
             <Container>
                 <Row className={showAll ? 'content show-all' : 'content'}>
-                    <div className="content my-3 flex-col items-center justify-between rounded-lg bg-white py-3 px-3">
-                        <div className="flex-col w-full relative bg-white p-2" style={{ height: 'auto', overflow: 'hidden' }}>
-                            <div className="relative  text-17 box-cmt text-justify">
+                    <div className=" my-3 items-center rounded-lg bg-white py-3 px-3">
+                        <div className="w-100 bg-white p-2" style={{ height: 'auto', overflow: 'hidden' }}>
+                            <div className=" ">
                                 <h2>Điện thoại di động, Smartphone: Tất cả điều bạn cần biết khi mua</h2>
                                 <p style={{ textAlign: 'justify' }}><strong><a href="https://didongviet.vn/dien-thoai">Điện thoại</a></strong>
                                     di động hay smartphone là những sản phẩm rất quen thuộc với hầu hết với đa số mọi người hiện nay. Với

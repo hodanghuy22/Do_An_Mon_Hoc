@@ -30,7 +30,7 @@ const Cart = () => {
                 <Link to="/" className='btn btn-outline-primary w-50 bg-light text-primary bold'>Về trang chủ</Link>
             </div>
             {/* Có sản phẩm */}
-            <div className='d-flex justify-content-center w-50 m-auto'>
+            <div className='d-flex justify-content-center w-50 m-auto py-5'>
                 <Container>
                     <Row className=' pb-2 mb-4  border-bottom border-info'>
                         <Col xl={2} md={2} sm={2} className='p-2'>
@@ -157,7 +157,7 @@ const Cart = () => {
                                     <Form.Check type="checkbox" label="Tôi đồng ý với Chính sách xử lý dữ liệu cá nhân của PHBshop" />
                                 </Form.Group>
 
-                                <Button type='submit' variant='btn btn-secondary' className='w-100 p-2'>ĐẶT HÀNG</Button>
+                                <Link to="/cart/thanh-toan" className='w-100 p-2 btn btn-secondary'>ĐẶT HÀNG</Link>
                             </Form>
                         </Col>
                     </Row>
