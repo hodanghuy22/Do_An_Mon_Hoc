@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace DoAnMonHoc_Backend.Models
 {
@@ -12,6 +13,7 @@ namespace DoAnMonHoc_Backend.Models
         [ForeignKey("UserId")]
         public User User { get; set; }
         public int ProductId { get; set; }
+        [JsonIgnore]
         public Product Product { get; set; }
         public int? CommentId { get; set; }
         [ForeignKey("CommentId")]

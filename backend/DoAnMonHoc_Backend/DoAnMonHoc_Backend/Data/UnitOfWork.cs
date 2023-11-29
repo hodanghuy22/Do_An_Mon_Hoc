@@ -59,6 +59,12 @@ namespace DoAnMonHoc_Backend.Data
         public IInvoiceDetailRepository InvoiceDetailRepository => 
             new InvoiceDetailRepository(_context);
 
+        public ICommentRepository CommentRepository => 
+            new CommentRepository(_context);
+
+        public IRatingRepository RatingRepository => 
+            new RatingRepository(_context);
+
         public async Task<bool> SaveAsync()
         {
             return await _context.SaveChangesAsync() > 0;

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.Text.Json.Serialization;
 
 namespace DoAnMonHoc_Backend.Models
 {
@@ -8,7 +9,9 @@ namespace DoAnMonHoc_Backend.Models
         public int Age { get; set; }
         public string Address { get; set; }
         public string FileHinh { get; set; }
-        public List<Comment> Comments { get; set; } 
+        [JsonIgnore]
+        public List<Comment> Comments { get; set; }
+        [JsonIgnore]
         public List<Invoice> Invoices { get; set; } 
     }
 }

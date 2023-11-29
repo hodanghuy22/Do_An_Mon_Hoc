@@ -14,6 +14,8 @@
         ICouponRepository CouponRepository { get; }
         IInvoiceRepository InvoiceRepository { get; }
         IInvoiceDetailRepository InvoiceDetailRepository { get; }
+        ICommentRepository CommentRepository { get; }
+        IRatingRepository RatingRepository { get; }
         Task<bool> SaveAsync();
     }
 }

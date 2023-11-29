@@ -1,4 +1,6 @@
-﻿namespace DoAnMonHoc_Backend.Models
+﻿using System.Text.Json.Serialization;
+
+namespace DoAnMonHoc_Backend.Models
 {
     public class Rating
     {
@@ -6,6 +8,7 @@
         public string UserId { get; set; }
         public User User { get; set; }
         public int ProductId { get; set; }
+        [JsonIgnore]
         public Product Product { get; set; }    
         public string Comment { get; set; }
         public string HinhPublicId { get; set; }

@@ -32,6 +32,8 @@ namespace DoAnMonHoc_Backend.Repository
                 .Include(p => p.Capacity)
                 .Include(p => p.Color)
                 .Include(p => p.Images)
+                .Include(p => p.Comments)
+                .Include(p => p.Ratings)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
 
@@ -41,6 +43,8 @@ namespace DoAnMonHoc_Backend.Repository
                 .Include(p => p.Capacity)
                 .Include(p => p.Color)
                 .Include(p => p.Images)
+                .Include(p => p.Comments)
+                .Include(p => p.Ratings)
                 .ToListAsync();
         }
 
