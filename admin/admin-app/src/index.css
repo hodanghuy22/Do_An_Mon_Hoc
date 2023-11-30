@@ -17,3 +17,26 @@ body{
 .mt-3{
   margin-top: 300px;
 }
+
+.demo-logo-vertical{
+  height: 64px;
+  background-color: #ffd333;;
+}
+
+.ant-layout-sider{
+  min-width: 230px !important;
+}
+
+.ant-layout-sider-collapsed{
+  min-width: 80px !important;
+}
+
+.t-lg{
+  font-size: 26px !important;
+}
+
+.img-acc{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
