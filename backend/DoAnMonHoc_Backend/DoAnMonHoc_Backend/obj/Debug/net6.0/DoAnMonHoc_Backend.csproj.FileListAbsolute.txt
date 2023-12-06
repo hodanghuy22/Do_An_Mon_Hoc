@@ -251,3 +251,4 @@ D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\CloudinaryDotNet.dll
+D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\obj\Debug\net6.0\DoAnMonHoc_Backend.csproj.AssemblyReference.cache

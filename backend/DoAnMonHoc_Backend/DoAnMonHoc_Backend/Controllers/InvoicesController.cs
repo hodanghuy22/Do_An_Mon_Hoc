@@ -17,25 +17,26 @@ namespace DoAnMonHoc_Backend.Controllers
             _uow = uow;
         }
         [HttpGet]
-        public async Task<IActionResult> GetInvoices()
+        [Route("{userId}")]
+        public async Task<IActionResult> GetInvoices(string userId)
         {
-            var invoices = await _uow.InvoiceRepository.GetInvoices();
+            var invoices = await _uow.InvoiceRepository.GetInvoices(userId);
             return Ok(invoices);
         }
         [HttpGet]
-        [Route("GetInvoicesByStatus")]
-        public async Task<IActionResult> GetInvoicesByStatus(string status)
+        [Route("GetInvoicesByStatus/{userId}/{status}")]
+        public async Task<IActionResult> GetInvoicesByStatus(string userId, string status)
         {
-            var invoices = await _uow.InvoiceRepository.GetInvoices();
+            var invoices = await _uow.InvoiceRepository.GetInvoicesByStatus(userId, status);
             return Ok(invoices);
         }
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<IActionResult> GetInvoice(int id)
-        {
-            var invoice = await _uow.InvoiceRepository.GetInvoice(id);
-            return Ok(invoice);
-        }
+        //[HttpGet]
+        //[Route("{id}")]
+        //public async Task<IActionResult> GetInvoice(int id)
+        //{
+        //    var invoice = await _uow.InvoiceRepository.GetInvoice(id);
+        //    return Ok(invoice);
+        //}
         [HttpPost]
         public async Task<IActionResult> CreateInvoice(Invoice invoice)
         {

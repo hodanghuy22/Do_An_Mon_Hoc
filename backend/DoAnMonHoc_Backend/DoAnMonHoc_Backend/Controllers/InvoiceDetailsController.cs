@@ -6,6 +6,7 @@ namespace DoAnMonHoc_Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class InvoiceDetailsController : ControllerBase
     {
         private readonly IUnitOfWork _uow;
@@ -28,7 +29,6 @@ namespace DoAnMonHoc_Backend.Controllers
             return Ok(invoiceDetail);
         }
         [HttpPost]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateInvoiceDetail(InvoiceDetail invoiceDetail)
         {
             var checkInvoiceDetail = await _uow.InvoiceDetailRepository.InvoiceDetailExist(invoiceDetail.Id);
@@ -46,7 +46,6 @@ namespace DoAnMonHoc_Backend.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateInvoiceDetail(int id, InvoiceDetail invoiceDetail)
         {
             if (id != invoiceDetail.Id)
@@ -57,7 +56,6 @@ namespace DoAnMonHoc_Backend.Controllers
         }
         [HttpPut]
         [Route("DeleteInvoiceDetail/{id}")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteInvoiceDetail(int id)
         {
             await _uow.InvoiceDetailRepository.DeleteInvoiceDetail(id);

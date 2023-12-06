@@ -34,18 +34,19 @@ namespace DoAnMonHoc_Backend.Repository
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<IEnumerable<Invoice>> GetInvoices()
+        public async Task<IEnumerable<Invoice>> GetInvoices(string userID)
         {
             return await _context.Invoices.Include(i => i.Coupon)
                 .Include(i => i.InvoiceDetails)
+                .Where(i => i.UserId == userID)
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Invoice>> GetInvoicesByStatus(string status)
+        public async Task<IEnumerable<Invoice>> GetInvoicesByStatus(string userID,string status)
         {
             return await _context.Invoices.Include(i => i.Coupon)
                 .Include(i => i.InvoiceDetails)
-                .Where(i => i.OrderStatus == status)
+                .Where(i => i.UserId == userID && i.OrderStatus == status)
                 .ToListAsync();
         }
 

@@ -5,6 +5,7 @@ using DoAnMonHoc_Backend.Interfaces;
 using DoAnMonHoc_Backend.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -198,5 +199,18 @@ namespace DoAnMonHoc_Backend.Repository
 
             return new OkObjectResult("Password changed successfully");
         }
+
+        //public async Task<IActionResult> ResetPasswordAsync(string email)
+        //{
+        //    var user = await GetUserByEmail(email);
+        //    if(user == null)
+        //    {
+        //        return new BadRequestObjectResult("No User Associated with this email!");
+        //    }
+        //    var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+        //    var encodeToken = Encoding.UTF8.GetBytes(token);
+        //    var validToken = WebEncoders.Base64UrlEncode(encodeToken);
+        //    string url = $"https://localhost:7068/ResetPassword?email={email}&token={validToken}";
+        //}
     }
 }
