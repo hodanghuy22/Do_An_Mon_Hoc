@@ -7,6 +7,7 @@ namespace DoAnMonHoc_Backend.Interfaces
     {
         Task CreatePhone(Phone phone);
         Task<IEnumerable<Phone>> GetPhones();
+        Task<IEnumerable<Phone>> GetPhonesByBrand(int brandId);
         Task<Phone> GetPhone(int id);
         Task<bool> PhoneExist(int id);
         Task<IActionResult> UpdatePhone(Phone phone);

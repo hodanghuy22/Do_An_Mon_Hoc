@@ -2,9 +2,10 @@
 using DoAnMonHoc_Backend.Dto;
 using DoAnMonHoc_Backend.Interfaces;
 using DoAnMonHoc_Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Text;
+using System.Security.Cryptography;
 
 namespace DoAnMonHoc_Backend.Controllers
 {
@@ -14,15 +15,11 @@ namespace DoAnMonHoc_Backend.Controllers
     {
         private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
-        private readonly UserManager<User> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public UsersController(IUnitOfWork uow, IMapper mapper, UserManager<User> userManager, RoleManager<IdentityRole> roleManager  )
+        public UsersController(IUnitOfWork uow, IMapper mapper)
         {
             _uow = uow;
             _mapper = mapper;
-            _userManager = userManager;
-            _roleManager = roleManager;
         }
         [HttpPost]
         [Route("register-admin")]
@@ -43,16 +40,31 @@ namespace DoAnMonHoc_Backend.Controllers
             return await _uow.UserRepositoty.Login(account);
         }
         [HttpGet]
-        [Route("GetUsers")]
         public async Task<IEnumerable<UserDto>> GetUsers()
         {
             return await _uow.UserRepositoty.GetUsers();
         }
         [HttpGet]
-        [Route("GetUser")]
-        public async Task<UserDto> GetUser(string id)
+        [Route("{id}")]
+        public async Task<IActionResult> GetUser(string id)
         {
-            return await _uow.UserRepositoty.GetUser(id);
+            var user = await _uow.UserRepositoty.GetUser(id);
+            var userDto = _mapper.Map<UserDto>(user);
+            return Ok(userDto);
+        }
+        [HttpPut]
+        [Route("{id}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateUser(string id, UserDto userDto)
+        {
+            return await _uow.UserRepositoty.UpdateUser(id,userDto);
+        }
+        [HttpPut]
+        [Route("ChangePassword/{id}")]
+        [Authorize]
+        public async Task<IActionResult> ChangePassword(string id, ChangePasswordModel changePasswordModel)
+        {
+            return await _uow.UserRepositoty.ChangePassword(id, changePasswordModel);
         }
     }
 }

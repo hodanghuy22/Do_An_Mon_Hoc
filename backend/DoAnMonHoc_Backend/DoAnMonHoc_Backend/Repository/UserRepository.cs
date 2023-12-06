@@ -32,13 +32,6 @@ namespace DoAnMonHoc_Backend.Repository
             _mapper = mapper;
         }
 
-        public async Task<UserDto> GetUser(string id)
-        {
-            var user = await _userManager.FindByIdAsync(id);
-            var userDto = _mapper.Map<UserDto>(user);
-            return userDto;
-        }
-
         public async Task<IEnumerable<UserDto>> GetUsers()
         {
             var users = await _userManager.Users.ToListAsync();
@@ -144,6 +137,66 @@ namespace DoAnMonHoc_Backend.Repository
                 await _userManager.AddToRoleAsync(user, "Admin");
             }
             return new OkResult();
+        }
+
+        public async Task<IActionResult> UpdateUser(string id, UserDto userDto)
+        {
+            var userDB = await _userManager.FindByIdAsync(id);
+            Console.WriteLine("trc " + userDB.Name);
+            if (userDB == null)
+            {
+                return new NotFoundResult();
+            }
+            _mapper.Map(userDto, userDB);
+            Console.WriteLine("sau " + userDB.Name);
+
+            // Thực hiện cập nhật thông tin người dùng trong cơ sở dữ liệu
+            var result = await _userManager.UpdateAsync(userDB);
+            if (result.Succeeded)
+            {
+                return new OkResult();
+            }
+
+            return new BadRequestObjectResult(result.Errors);
+        }
+
+        public async Task<bool> UserExist(string id)
+        {
+            return await _context.Users.AnyAsync(b => b.Id == id);
+        }
+
+        public async Task<User> GetUser(string id)
+        {
+            return await _userManager.FindByIdAsync(id);
+        }
+
+        public async Task<User> GetUserByEmail(string email)
+        {
+            return await _userManager.FindByEmailAsync(email);
+        }
+
+        public async Task<IActionResult> ChangePassword(string id,ChangePasswordModel changePasswordModel)
+        {
+            var user = await GetUser(id);
+
+            if (user == null)
+            {
+                // Người dùng không tồn tại
+                return new BadRequestObjectResult("Invalid user");
+            }
+
+            var changePasswordResult = await _userManager
+                .ChangePasswordAsync(user, 
+                changePasswordModel.CurrentPassword,
+                changePasswordModel.NewPassword);
+
+            if (!changePasswordResult.Succeeded)
+            {
+                // Lỗi khi thay đổi mật khẩu
+                return new BadRequestObjectResult(changePasswordResult.Errors);
+            }
+
+            return new OkObjectResult("Password changed successfully");
         }
     }
 }

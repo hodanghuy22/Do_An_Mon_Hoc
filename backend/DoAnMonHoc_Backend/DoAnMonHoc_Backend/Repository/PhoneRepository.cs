@@ -37,6 +37,13 @@ namespace DoAnMonHoc_Backend.Repository
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Phone>> GetPhonesByBrand(int brandId)
+        {
+            return await _context.Phones.Include(p => p.Brand)
+                .Where(p => p.BrandId == brandId)
+                .ToListAsync();
+        }
+
         public async Task<bool> PhoneExist(int id)
         {
             return await _context.Brands.AnyAsync(b => b.Id == id);

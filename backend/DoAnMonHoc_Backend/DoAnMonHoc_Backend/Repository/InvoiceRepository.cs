@@ -41,6 +41,14 @@ namespace DoAnMonHoc_Backend.Repository
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Invoice>> GetInvoicesByStatus(string status)
+        {
+            return await _context.Invoices.Include(i => i.Coupon)
+                .Include(i => i.InvoiceDetails)
+                .Where(i => i.OrderStatus == status)
+                .ToListAsync();
+        }
+
         public async Task<bool> InvoiceExist(int id)
         {
             return await _context.Invoices.AnyAsync(b => b.Id == id);

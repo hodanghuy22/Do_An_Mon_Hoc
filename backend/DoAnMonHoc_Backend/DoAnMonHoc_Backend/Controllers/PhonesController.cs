@@ -23,6 +23,13 @@ namespace DoAnMonHoc_Backend.Controllers
             return Ok(phones);
         }
         [HttpGet]
+        [Route("GetPhoneByBrand/{brandId}")]
+        public async Task<IActionResult> GetPhoneByBrand(int brandId)
+        {
+            var phones = await _uow.PhoneRepository.GetPhonesByBrand(brandId);
+            return Ok(phones);
+        }
+        [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetPhone(int id)
         {

@@ -64,7 +64,6 @@ D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\obj\
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\obj\Debug\net6.0\DoAnMonHoc_Backend.genruntimeconfig.cache
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\AutoMapper.dll
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\obj\Debug\net6.0\DoAnMonHoc_Backend.csproj.AssemblyReference.cache
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\MessagePack.dll
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\MessagePack.Annotations.dll
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll

@@ -7,6 +7,7 @@ namespace DoAnMonHoc_Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class InvoicesController : ControllerBase
     {
         private readonly IUnitOfWork _uow;
@@ -22,6 +23,13 @@ namespace DoAnMonHoc_Backend.Controllers
             return Ok(invoices);
         }
         [HttpGet]
+        [Route("GetInvoicesByStatus")]
+        public async Task<IActionResult> GetInvoicesByStatus(string status)
+        {
+            var invoices = await _uow.InvoiceRepository.GetInvoices();
+            return Ok(invoices);
+        }
+        [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetInvoice(int id)
         {
@@ -29,7 +37,6 @@ namespace DoAnMonHoc_Backend.Controllers
             return Ok(invoice);
         }
         [HttpPost]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateInvoice(Invoice invoice)
         {
             var checkInvoice = await _uow.InvoiceRepository.InvoiceExist(invoice.Id);
@@ -47,7 +54,6 @@ namespace DoAnMonHoc_Backend.Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateInvoice(int id, Invoice invoice)
         {
             if (id != invoice.Id)
