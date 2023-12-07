@@ -182,7 +182,6 @@ namespace DoAnMonHoc_Backend.Repository
 
             if (user == null)
             {
-                // Người dùng không tồn tại
                 return new BadRequestObjectResult("Invalid user");
             }
 
@@ -193,7 +192,6 @@ namespace DoAnMonHoc_Backend.Repository
 
             if (!changePasswordResult.Succeeded)
             {
-                // Lỗi khi thay đổi mật khẩu
                 return new BadRequestObjectResult(changePasswordResult.Errors);
             }
 

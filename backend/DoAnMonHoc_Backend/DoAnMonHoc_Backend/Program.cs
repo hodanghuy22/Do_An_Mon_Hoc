@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IPhotoService, PhotoService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddDbContext<CSDLContext>(options =>
     options.
     UseSqlServer(builder.Configuration.GetConnectionString("DoAnMonHoc")
