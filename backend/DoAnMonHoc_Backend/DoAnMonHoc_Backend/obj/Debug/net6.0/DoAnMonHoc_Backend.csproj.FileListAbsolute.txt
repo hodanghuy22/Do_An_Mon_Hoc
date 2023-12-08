@@ -260,3 +260,4 @@ D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+D:\BAI_TAP\ASP_NET_Core\Do_An\backend\DoAnMonHoc_Backend\DoAnMonHoc_Backend\bin\Debug\net6.0\Stripe.net.dll
