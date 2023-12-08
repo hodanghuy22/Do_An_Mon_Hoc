@@ -133,32 +133,7 @@ const Cart = () => {
                     </Row>
                     <Row>
                         <Col>
-                            <h3>Thông tin khách hàng</h3>
-                            <Form>
-                                <Form.Group controlId="formBasicFullName">
-                                    <Form.Label>Họ Tên</Form.Label>
-                                    <Form.Control type="FullName" placeholder="Nhập Họ Tên" />
-                                </Form.Group>
-
-                                <Form.Group controlId="formBasicPassword">
-                                    <Form.Label>Số diện thoại</Form.Label>
-                                    <Form.Control type="text" pattern="[0-9]{10}" placeholder="Số diện thoại (10 kí tự)" required />
-                                    <Form.Control.Feedback type="invalid">
-                                        Số điện thoại phải có đúng 10 kí tự.
-                                    </Form.Control.Feedback>
-                                </Form.Group>
-
-
-                                <p className='w-100'>
-                                    <span className='text-left'>Tổng tiền: </span>
-                                    <span className='text-right text-danger'>3.470.000đ</span>
-                                </p>
-                                <Form.Group controlId="formBasicCheckbox">
-                                    <Form.Check type="checkbox" label="Tôi đồng ý với Chính sách xử lý dữ liệu cá nhân của PHBshop" />
-                                </Form.Group>
-
                                 <Link to="/cart/thanh-toan" className='w-100 p-2 btn btn-secondary'>ĐẶT HÀNG</Link>
-                            </Form>
                         </Col>
                     </Row>
 

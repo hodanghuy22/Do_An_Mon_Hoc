@@ -1,9 +1,39 @@
 body {
   font-family: Roboto, sans-serif;
-  background: #edf0f5;
+  /* background: #edf0f5; */
+  background: #ffffff;
   position: relative;
 }
+/* Màu */
+.color-primary {
+  color: #ecee81;
+}
+.background-primary {
+  background-color: #ecee81;
+}
+.button-primary {
+  color: #000000;
+  background-color: #ecee81;
+  border: 1px solid #fffadd;
+}
+.btn:hover{
+  background-color: transparent;
+  color: #000000;
+}
+.btn{
+  outline: none;
+}
+<<<<<<< HEAD
+.btn-hover{
+  text-decoration: none;
+}
+.btn-hover:hover{
+  background-color: #ecee81;
+  color: #ffffff;
 
+}
+=======
+>>>>>>> a279fa93df0c2078b52cd083fd0d78f836f1100b
 a {
   text-decoration: none;
 }
@@ -58,7 +88,7 @@ textarea {
   background-color: red;
   color: red;
 }
-.text-uppercase{
+.text-uppercase {
   text-transform: uppercase;
 }
 .scroll-to-top-button {

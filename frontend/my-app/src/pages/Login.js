@@ -7,7 +7,6 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const handleSwitch = () => {
     setIsLogin(!isLogin);
@@ -21,18 +20,8 @@ const Login = () => {
   };
 
 
-  const [showButton, setShowButton] = useState(false);
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      setShowButton(scrollTop > 500); // Hiển thị nút khi người dùng cuộn xuống 500px
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+ 
   }, []);
 
   return (
@@ -52,13 +41,14 @@ const Login = () => {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Nhập Mật Khẩu" />
           </Form.Group>
+          <Form.Group controlId="formBasicPasswordConfirm" className="mt-2">
+            <Form.Label>Nhập Lại Mật Khẩu</Form.Label>
+            <Form.Control type="password" placeholder="Nhập Lại Mật Khẩu" />
+          </Form.Group>
           <Button variant="primary" type="submit" className="mt-3">
             {isLogin ? 'Đăng Nhập' : 'Đăng Ký'}
           </Button>
         </Form>
-
-
-
       </Modal.Body>
       <Modal.Footer>
         <p >

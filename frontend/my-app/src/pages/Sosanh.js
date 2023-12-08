@@ -23,7 +23,7 @@ const Sosanh = () => {
                       <Card className='  bg-transparent' border='1' >
                           <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                               <Card className='border-0 '>
-                                  <Card.Img className='card-image' variant="top" src="/images/products/7.jpg" />
+                                  <Card.Img className='card-image' variant="top" src="/Images/products/7.jpg" />
                                   <Card.Body>
                                       <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                       <Card.Text className='text-danger font-size-bold'>
@@ -38,7 +38,7 @@ const Sosanh = () => {
                           <Card className='  bg-transparent' border='1' >
                               <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                   <Card className='border-0'>
-                                      <Card.Img className='card-image' variant="top" src="/images/products/7.jpg" />
+                                      <Card.Img className='card-image' variant="top" src="/Images/products/7.jpg" />
                                       <Card.Body>
                                           <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                           <Card.Text className='text-danger font-size-bold'>

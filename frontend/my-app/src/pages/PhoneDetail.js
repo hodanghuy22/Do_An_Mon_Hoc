@@ -48,98 +48,98 @@ const PhoneDetail = () => {
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/1.jpg"
+                                    src="/Images/detail/1/1.jpg"
                                     alt="First slide 1"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/2.jpg"
+                                    src="/Images/detail/1/2.jpg"
                                     alt="First slide 2"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/3.jpg"
+                                    src="/Images/detail/1/3.jpg"
                                     alt="First slide 3"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/4.jpg"
+                                    src="/Images/detail/1/4.jpg"
                                     alt="First slide 4"
                                 /> 
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/5.jpg"
+                                    src="/Images/detail/1/5.jpg"
                                     alt="First slide 5"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/6.jpg"
+                                    src="/Images/detail/1/6.jpg"
                                     alt="First slide 6"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/7.jpg"
+                                    src="/Images/detail/1/7.jpg"
                                     alt="First slide7" 
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/8.jpg"
+                                    src="/Images/detail/1/8.jpg"
                                     alt="First slide 8"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/9.jpg"
+                                    src="/Images/detail/1/9.jpg"
                                     alt="First slide 9"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/10.jpg"
+                                    src="/Images/detail/1/10.jpg"
                                     alt="First slide10"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/11.jpg"
+                                    src="/Images/detail/1/11.jpg"
                                     alt="First slide 11"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/12.jpg"
+                                    src="/Images/detail/1/12.jpg"
                                     alt="First slide 12"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/13.jpg"
+                                    src="/Images/detail/1/13.jpg"
                                     alt="First slide 13"
                                 />
                             </Carousel.Item>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="/images/detail/1/14.jpg"
+                                    src="/Images/detail/1/14.jpg"
                                     alt="First slide 14"
                                 />
                             </Carousel.Item>
@@ -163,7 +163,7 @@ const PhoneDetail = () => {
                         {/* Ảnh thông tin điện thoại */}
                         <Container className='bg-light '>
                             <Row >
-                                <img src='/images/detail/1/note.jpg' style={{ width: '100%' }} alt='zxczxc'/>
+                                <img src='/Images/detail/1/note.jpg' style={{ width: '100%' }} alt='zxczxc'/>
                             </Row>
                             <Row className='mt-5'>
                                 <h5>Thông tin sản phẩm</h5>
@@ -218,7 +218,7 @@ const PhoneDetail = () => {
                                     <div className='mt-4'>
                                         <div className='d-flex items-start justify-start '>
                                             <div className='avatar overflow-hidden'>
-                                                <img src='https://didongviet.vn/images/pc/defaultavatar.png' alt='zxczcxzxc'/>
+                                                <img src='https://didongviet.vn/Images/pc/defaultavatar.png' alt='zxczcxzxc'/>
                                             </div>
                                             <div className='flex-column items-start justify-start pl-2 w-11/12'>
                                                 <div className='d-flex items-center'>
@@ -240,7 +240,7 @@ const PhoneDetail = () => {
                                         </div>
                                         <div className='d-flex items-start justify-start  '>
                                             <div className='avatar overflow-hidden pr-5 ml-5'>
-                                                <img src='https://didongviet.vn/images/pc/defaultavatar.png' alt='asdasdasd'/>
+                                                <img src='https://didongviet.vn/Images/pc/defaultavatar.png' alt='asdasdasd'/>
                                             </div>
                                             <div className='flex-column items-start justify-start px-3 w-11/12'>
                                                 <div class="d-flex items-center">
@@ -313,17 +313,11 @@ const PhoneDetail = () => {
                                             <div className='pt-4'>
                                                 <div className='d-flex items-start justify-start '>
                                                     <div className='avatar overflow-hidden'>
-                                                        <img src='https://didongviet.vn/images/pc/defaultavatar.png' alt='asdasdasd' />
+                                                        <img src='https://didongviet.vn/Images/pc/defaultavatar.png' alt='asdasdasd' />
                                                     </div>
                                                     <div className='flex-column items-start justify-start pl-2 w-11/12'>
                                                         <div className='d-flex items-center'>
-                                                            <span style={{ display: 'inline-block', direction: '1tr' }}>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                            </span>
+                                                            
                                                             <p className="text-brow text-sm mx-2">2023-11-03T07:07:29.000Z</p>
                                                         </div>
                                                         <div class="d-flex items-center">
@@ -335,7 +329,7 @@ const PhoneDetail = () => {
                                                 </div>
                                                 <div className='d-flex items-start justify-start  '>
                                                     <div className='avatar overflow-hidden pr-5 ml-5'>
-                                                        <img src='https://didongviet.vn/images/pc/defaultavatar.png' alt='adasdasdas'/>
+                                                        <img src='https://didongviet.vn/Images/pc/defaultavatar.png' alt='adasdasdas'/>
                                                     </div>
                                                     <div className='flex-column items-start justify-start px-3 w-11/12'>
                                                         <div class="d-flex items-center">
@@ -356,17 +350,11 @@ const PhoneDetail = () => {
                                             <div className='pt-4'>
                                                 <div className='d-flex items-start justify-start '>
                                                     <div className='avatar overflow-hidden'>
-                                                        <img src='https://didongviet.vn/images/pc/defaultavatar.png' alt='asdasdsad' />
+                                                        <img src='https://didongviet.vn/Images/pc/defaultavatar.png' alt='asdasdsad' />
                                                     </div>
                                                     <div className='flex-column items-start justify-start pl-2 w-11/12'>
                                                         <div className='d-flex items-center'>
-                                                            <span style={{ display: 'inline-block', direction: '1tr' }}>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                            </span>
+                                                            
                                                             <p className="text-brow text-sm mx-2">2023-11-03T07:07:29.000Z</p>
                                                         </div>
                                                         <div class="d-flex items-center">
@@ -378,7 +366,7 @@ const PhoneDetail = () => {
                                                 </div>
                                                 <div className='d-flex items-start justify-start  '>
                                                     <div className='avatar overflow-hidden pr-5 ml-5'>
-                                                        <img src='https://didongviet.vn/images/pc/defaultavatar.png'  alt='asdasd'/>
+                                                        <img src='https://didongviet.vn/Images/pc/defaultavatar.png'  alt='asdasd'/>
                                                     </div>
                                                     <div className='flex-column items-start justify-start px-3 w-11/12'>
                                                         <div class="d-flex items-center">
@@ -399,17 +387,11 @@ const PhoneDetail = () => {
                                             <div className='pt-4'>
                                                 <div className='d-flex items-start justify-start '>
                                                     <div className='avatar overflow-hidden'>
-                                                        <img src='https://didongviet.vn/images/pc/defaultavatar.png'  alt='asdasd'/>
+                                                        <img src='https://didongviet.vn/Images/pc/defaultavatar.png'  alt='asdasd'/>
                                                     </div>
                                                     <div className='flex-column items-start justify-start pl-2 w-11/12'>
                                                         <div className='d-flex items-center'>
-                                                            <span style={{ display: 'inline-block', direction: '1tr' }}>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                            </span>
+                                                            
                                                             <p className="text-brow text-sm mx-2">2023-11-03T07:07:29.000Z</p>
                                                         </div>
                                                         <div class="d-flex items-center">
@@ -421,7 +403,7 @@ const PhoneDetail = () => {
                                                 </div>
                                                 <div className='d-flex items-start justify-start  '>
                                                     <div className='avatar overflow-hidden pr-5 ml-5'>
-                                                        <img src='https://didongviet.vn/images/pc/defaultavatar.png'  alt='asdasd'/>
+                                                        <img src='https://didongviet.vn/Images/pc/defaultavatar.png'  alt='asdasd'/>
                                                     </div>
                                                     <div className='flex-column items-start justify-start px-3 w-11/12'>
                                                         <div class="d-flex items-center">
@@ -442,17 +424,11 @@ const PhoneDetail = () => {
                                             <div className='pt-4'>
                                                 <div className='d-flex items-start justify-start '>
                                                     <div className='avatar overflow-hidden'>
-                                                        <img src='https://didongviet.vn/images/pc/defaultavatar.png'  alt='asdasd'/>
+                                                        <img src='https://didongviet.vn/Images/pc/defaultavatar.png'  alt='asdasd'/>
                                                     </div>
                                                     <div className='flex-column items-start justify-start pl-2 w-11/12'>
                                                         <div className='d-flex items-center'>
-                                                            <span style={{ display: 'inline-block', direction: '1tr' }}>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                                <span style={{ cursor: 'inherit', display: 'inline-block', position: 'relative' }}>&#9733;</span>
-                                                            </span>
+                                                            
                                                             <p className="text-brow text-sm mx-2">2023-11-03T07:07:29.000Z</p>
                                                         </div>
                                                         <div class="d-flex items-center">
@@ -464,7 +440,7 @@ const PhoneDetail = () => {
                                                 </div>
                                                 <div className='d-flex items-start justify-start  '>
                                                     <div className='avatar overflow-hidden pr-5 ml-5'>
-                                                        <img src='https://didongviet.vn/images/pc/defaultavatar.png' alt='zxcz'/>
+                                                        <img src='https://didongviet.vn/Images/pc/defaultavatar.png' alt='zxcz'/>
                                                     </div>
                                                     <div className='flex-column items-start justify-start px-3 w-11/12'>
                                                         <div class="d-flex items-center">

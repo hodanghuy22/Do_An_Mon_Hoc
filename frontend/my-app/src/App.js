@@ -14,6 +14,7 @@ import DanhSachYeuThich from "./pages/DanhSachYeuThich";
 import Thanhtoan from "./pages/Thanhtoan";
 import Sosanh from "./pages/Sosanh";
 import Doimatkhau from "./pages/Doimatkhau";
+import ChiTietDonHang from "./pages/ChiTietDonHang";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="thong-tin-tai-khoan" element={<Thongtindiachi />} />
             <Route path="san-pham-yeu-thich" element={<DanhSachYeuThich />} />
             <Route path="doi-mat-khau" element={<Doimatkhau />} />
+            <Route path="chi-tiet-don-hang/1" element={<ChiTietDonHang />} />
           </Route>
         </Route>
       </Routes>

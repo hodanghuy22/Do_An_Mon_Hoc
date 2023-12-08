@@ -8,8 +8,8 @@ const AccountLayout = () => {
     return (
         <div>
             <Container>
-                <Row>
-                    <Col xl={3} className='mr-2'>
+                <Row className='justify-content-between'>
+                    <Col xl={3} className=''>
                         <h6>Anh <strong>Phạm Quảng Bình</strong></h6>
                         <div className='text-left'>
                             <Link to="/user" variant='light' className='w-100 text-left btn mb-2'>
@@ -31,7 +31,7 @@ const AccountLayout = () => {
                             Đăng xuất
                         </Button>
                     </Col>
-                    <Col xl={8}>
+                    <Col xl={9} className='p-0'>
                      <Outlet/>
                     </Col>
                 </Row>

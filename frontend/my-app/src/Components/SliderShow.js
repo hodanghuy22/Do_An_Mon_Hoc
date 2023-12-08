@@ -6,7 +6,7 @@ function SliderShow() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="/images/slider/1.png"
+                    src="/Images/slider/1.png"
                     alt="First slide"
                 />
                
@@ -14,28 +14,28 @@ function SliderShow() {
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="/images/slider/2.png"
+                    src="/Images/slider/2.png"
                     alt="Second slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="/images/slider/3.png"
+                    src="/Images/slider/3.png"
                     alt="Third slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="/images/slider/4.png"
+                    src="/Images/slider/4.png"
                     alt="Third slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
-                    src="/images/slider/5.png"
+                    src="/Images/slider/5.png"
                     alt="Third slide"
                 />
             </Carousel.Item>

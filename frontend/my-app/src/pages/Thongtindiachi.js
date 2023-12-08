@@ -101,10 +101,6 @@ const Thongtindiachi = () => {
                     <Link className='ml-2'><TiEdit className='mb-2' />Sửa</Link>
                     <Link className='ml-2'><RiDeleteBin6Line className='mb-2' />Xóa</Link>
                 </p>
-                <hr />
-                <p className='text-primary font-weight-bold' style={{ cursor: 'pointer' }}>
-                    <IoIosAddCircleOutline className='mb-1 ' />  Thêm địa chỉ nhận hàng
-                </p>
             </div>
         </div>
     )

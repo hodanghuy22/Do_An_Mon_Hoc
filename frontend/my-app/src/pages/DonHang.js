@@ -53,7 +53,7 @@ const DonHang = () => {
           <p className={`m-auto text-center ${selectedTab === 'Đã giao' ? 'text-danger' : ''}`} onClick={() => handleTabClick('Đã giao')}>Đã giao</p>
         </div>
         <div className={`pt-3 pb-3 w-25 ml-2 ${selectedTab === 'Đã hủy' ? 'border-bottom border-danger' : 'border-bottom'}`} style={{cursor:'pointer'}}>
-          <p className={`m-auto text-center ${selectedTab === 'Đã hủy' ? 'text-danger' : ''}`} onClick={() => handleTabClick('Đã hủy')}>Đãhủy</p>
+          <p className={`m-auto text-center ${selectedTab === 'Đã hủy' ? 'text-danger' : ''}`} onClick={() => handleTabClick('Đã hủy')}>Đã hủy</p>
         </div>
       </div>
       <div>

@@ -62,7 +62,7 @@ const DienThoai = () => {
                         <Card className='p-2' border='1' style={{ width: '12rem', marginBottom: '10px' }}>
                             <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Card className='border-0'>
-                                    <Card.Img className='card-image' variant="top" src="/images/products/1.jpg" />
+                                    <Card.Img className='card-image' variant="top" src="/Images/products/1.jpg" />
                                     <Card.Body>
                                         <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                         <Card.Text className='text-danger font-size-bold'>
@@ -77,7 +77,7 @@ const DienThoai = () => {
                         <Card className='p-2' border='1' style={{ width: '12rem', marginBottom: '10px' }}>
                             <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Card className='border-0'>
-                                    <Card.Img className='card-image' variant="top" src="/images/products/2.jpg" />
+                                    <Card.Img className='card-image' variant="top" src="/Images/products/2.jpg" />
                                     <Card.Body>
                                         <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                         <Card.Text className='text-danger font-size-bold'>
@@ -92,7 +92,7 @@ const DienThoai = () => {
                         <Card className='p-2' border='1' style={{ width: '12rem', marginBottom: '10px' }}>
                             <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Card className='border-0'>
-                                    <Card.Img className='card-image' variant="top" src="/images/products/3.jpg" />
+                                    <Card.Img className='card-image' variant="top" src="/Images/products/3.jpg" />
                                     <Card.Body>
                                         <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                         <Card.Text className='text-danger font-size-bold'>
@@ -107,7 +107,7 @@ const DienThoai = () => {
                         <Card className='p-2' border='1' style={{ width: '12rem', marginBottom: '10px' }}>
                             <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Card className='border-0'>
-                                    <Card.Img className='card-image' variant="top" src="/images/products/4.jpg" />
+                                    <Card.Img className='card-image' variant="top" src="/Images/products/4.jpg" />
                                     <Card.Body>
                                         <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                         <Card.Text className='text-danger font-size-bold'>
@@ -122,7 +122,7 @@ const DienThoai = () => {
                         <Card className='p-2' border='1' style={{ width: '12rem', marginBottom: '10px' }}>
                             <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Card className='border-0'>
-                                    <Card.Img className='card-image' variant="top" src="/images/products/5.jpg" />
+                                    <Card.Img className='card-image' variant="top" src="/Images/products/5.jpg" />
                                     <Card.Body>
                                         <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                         <Card.Text className='text-danger font-size-bold'>
@@ -137,7 +137,7 @@ const DienThoai = () => {
                         <Card className='p-2' border='1' style={{ width: '12rem', marginBottom: '10px' }}>
                             <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Card className='border-0'>
-                                    <Card.Img className='card-image' variant="top" src="/images/products/6.jpg" />
+                                    <Card.Img className='card-image' variant="top" src="/Images/products/6.jpg" />
                                     <Card.Body>
                                         <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                         <Card.Text className='text-danger font-size-bold'>
@@ -152,7 +152,7 @@ const DienThoai = () => {
                         <Card className='p-2' border='1' style={{ width: '12rem', marginBottom: '10px' }}>
                             <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Card className='border-0'>
-                                    <Card.Img className='card-image' variant="top" src="/images/products/7.jpg" />
+                                    <Card.Img className='card-image' variant="top" src="/Images/products/7.jpg" />
                                     <Card.Body>
                                         <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                         <Card.Text className='text-danger font-size-bold'>
@@ -167,7 +167,7 @@ const DienThoai = () => {
                         <Card className='p-2' border='1' style={{ width: '12rem', marginBottom: '10px' }}>
                             <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Card className='border-0'>
-                                    <Card.Img className='card-image' variant="top" src="/images/products/8.jpg" />
+                                    <Card.Img className='card-image' variant="top" src="/Images/products/8.jpg" />
                                     <Card.Body>
                                         <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                         <Card.Text className='text-danger font-size-bold'>
@@ -182,7 +182,7 @@ const DienThoai = () => {
                         <Card className='p-2' border='1' style={{ width: '12rem', marginBottom: '10px' }}>
                             <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Card className='border-0'>
-                                    <Card.Img className='card-image' variant="top" src="/images/products/11.jpg" />
+                                    <Card.Img className='card-image' variant="top" src="/Images/products/11.jpg" />
                                     <Card.Body>
                                         <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                         <Card.Text className='text-danger font-size-bold'>
@@ -197,7 +197,7 @@ const DienThoai = () => {
                         <Card className='p-2' border='1' style={{ width: '12rem', marginBottom: '10px' }}>
                             <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <Card className='border-0'>
-                                    <Card.Img className='card-image' variant="top" src="/images/products/10.jpg" />
+                                    <Card.Img className='card-image' variant="top" src="/Images/products/10.jpg" />
                                     <Card.Body>
                                         <Card.Title>Samsung Galaxy A34 5G 128GB</Card.Title>
                                         <Card.Text className='text-danger font-size-bold'>
@@ -530,7 +530,7 @@ const DienThoai = () => {
                                         iPhone 12 Pro Max, iPhone 11, iPhone Xr,...</p>
                                     <h4>Samsung</h4>
                                     <p style={{ textAlign: 'justify' }}>Ngoài Apple thì Samsung cũng là một ông lớn trong thị trường smartphone hiện
-                                        nay. <a title="Điện thoại Samsung" href="https://didongviet.vn/samsung.html" target="_blank"
+                                        nay. <a title="Điện thoại Samsung" href="https://didongviet.vn/samsung.html" target="blank"
                                             rel="noopener"><strong>Điện thoại Samsung</strong></a> thường được hãng chăm chuốt rất tỉ mỉ và
                                         thường áp dụng những công nghệ mới lên sản phẩm. Vì thế, Samsung thường có đa dạng phân khúc smartphone
                                         từ tầm trung (Galaxy A Series) đến flagship cao cấp (dòng Galaxy S, Galaxy Note) và dòng nắp gập (Galaxy

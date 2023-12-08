@@ -12,7 +12,7 @@ const DanhSachYeuThich = () => {
                       <Card className='p-2' border='1' style={{width: '10rem' }}>
                           <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                               <Card className='border-0'>
-                                  <Card.Img className='card-image' variant="top" src="/images/products/1.jpg" />
+                                  <Card.Img className='card-image' variant="top" src="/Images/products/1.jpg" />
                                   <Card.Body>
                                       <Card.Title style={{ fontSize: '1rem'}}>Samsung Galaxy A34 5G 128GB</Card.Title>
                                       <Card.Text className='text-danger font-size-bold'>
@@ -27,7 +27,7 @@ const DanhSachYeuThich = () => {
                       <Card className='p-2' border='1' style={{ width: '10rem' }}>
                           <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                               <Card className='border-0'>
-                                  <Card.Img className='card-image' variant="top" src="/images/products/1.jpg" />
+                                  <Card.Img className='card-image' variant="top" src="/Images/products/1.jpg" />
                                   <Card.Body>
                                       <Card.Title style={{ fontSize: '1rem' }}>Samsung Galaxy A34 5G 128GB</Card.Title>
                                       <Card.Text className='text-danger font-size-bold'>
@@ -42,7 +42,7 @@ const DanhSachYeuThich = () => {
                       <Card className='p-2' border='1' style={{width: '10rem' }}>
                           <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                               <Card className='border-0'>
-                                  <Card.Img className='card-image' variant="top" src="/images/products/1.jpg" />
+                                  <Card.Img className='card-image' variant="top" src="/Images/products/1.jpg" />
                                   <Card.Body>
                                       <Card.Title style={{ fontSize: '1rem'}}>Samsung Galaxy A34 5G 128GB</Card.Title>
                                       <Card.Text className='text-danger font-size-bold'>
@@ -57,7 +57,7 @@ const DanhSachYeuThich = () => {
                       <Card className='p-2' border='1' style={{ width: '10rem' }}>
                           <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                               <Card className='border-0'>
-                                  <Card.Img className='card-image' variant="top" src="/images/products/1.jpg" />
+                                  <Card.Img className='card-image' variant="top" src="/Images/products/1.jpg" />
                                   <Card.Body>
                                       <Card.Title style={{ fontSize: '1rem' }}>Samsung Galaxy A34 5G 128GB</Card.Title>
                                       <Card.Text className='text-danger font-size-bold'>
@@ -72,7 +72,7 @@ const DanhSachYeuThich = () => {
                       <Card className='p-2' border='1' style={{ width: '10rem' }}>
                           <Link to="/dtdd/1" className="card-link" style={{ textDecoration: 'none', color: 'inherit' }}>
                               <Card className='border-0'>
-                                  <Card.Img className='card-image' variant="top" src="/images/products/1.jpg" />
+                                  <Card.Img className='card-image' variant="top" src="/Images/products/1.jpg" />
                                   <Card.Body>
                                       <Card.Title style={{ fontSize: '1rem' }}>Samsung Galaxy A34 5G 128GB</Card.Title>
                                       <Card.Text className='text-danger font-size-bold'>

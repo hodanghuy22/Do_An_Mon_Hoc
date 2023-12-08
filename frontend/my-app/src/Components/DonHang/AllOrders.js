@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const AllOrders = () => {
   return (
@@ -26,7 +27,7 @@ const AllOrders = () => {
             </div>
           </div>
           <div className='ml-auto mt-2'>
-            <Button className=' btn-light border border-warning text-warning '>Xem chi tiết</Button>
+            <Link to="chi-tiet-don-hang/1" className='btn btn-light border border-warning text-warning btn-hover '>Xem chi tiết</Link>
           </div>
         </div>
         <div className='border p-3 w-100'>
@@ -50,7 +51,7 @@ const AllOrders = () => {
             </div>
           </div>
           <div className='ml-auto mt-2'>
-            <Button className=' btn-light border border-warning text-warning '>Xem chi tiết</Button>
+            <Link to="chi-tiet-don-hang/1" className='btn btn-light border border-warning text-warning btn-hover '>Xem chi tiết</Link>
           </div>
         </div>
       </div>
