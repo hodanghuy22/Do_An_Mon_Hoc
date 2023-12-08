@@ -4,6 +4,6 @@ namespace DoAnMonHoc_Backend.Interfaces
 {
     public interface IEmailService
     {
-        void SendEmail(EmailModel emailModel);
+        Task SendEmail(EmailModel emailModel);
     }
 }

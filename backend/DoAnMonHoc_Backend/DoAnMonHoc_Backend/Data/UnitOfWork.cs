@@ -13,19 +13,22 @@ namespace DoAnMonHoc_Backend.Data
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
+        private readonly IEmailService _emailService;
 
         public UnitOfWork(CSDLContext context, 
             UserManager<User> userManager, RoleManager<IdentityRole> roleManager,
-            IConfiguration configuration, IMapper mapper)
+            IConfiguration configuration, IMapper mapper, IEmailService emailService)
         {
             this._context = context;
             this._userManager = userManager;
             this._roleManager = roleManager;
             _configuration = configuration;
             this._mapper = mapper;
+            _emailService = emailService;
         }
         public IUserRepositoty UserRepositoty =>
-                new UserRepository(_context, _userManager, _roleManager, _configuration,_mapper);
+                new UserRepository(_context, _userManager, 
+                    _roleManager, _configuration,_mapper, _emailService);
 
         public IProductTypeRepository ProductTypeRepository =>
             new ProductTypeRepository(_context);

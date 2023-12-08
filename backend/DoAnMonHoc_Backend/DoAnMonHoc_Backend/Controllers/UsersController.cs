@@ -66,5 +66,25 @@ namespace DoAnMonHoc_Backend.Controllers
         {
             return await _uow.UserRepositoty.ChangePassword(id, changePasswordModel);
         }
+        [HttpPost]
+        [Route("ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return NotFound();
+            }
+            return await _uow.UserRepositoty.ForgetPassword(email);
+        }
+        [HttpPost]
+        [Route("ResetPassword")]
+        public async Task<IActionResult> ResetPassword(ResetPasswordModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                return await _uow.UserRepositoty.ResetPassword(model);
+            }
+            return BadRequest("Some properties are not valid");
+        }
     }
 }

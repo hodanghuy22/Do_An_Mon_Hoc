@@ -21,16 +21,18 @@ namespace DoAnMonHoc_Backend.Repository
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
+        private readonly IEmailService _emailService;
 
         public UserRepository(CSDLContext context, 
             UserManager<User> userManager, RoleManager<IdentityRole> roleManager,
-            IConfiguration configuration, IMapper mapper)
+            IConfiguration configuration, IMapper mapper, IEmailService emailService)
         {
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
             _mapper = mapper;
+            _emailService = emailService;
         }
 
         public async Task<IEnumerable<UserDto>> GetUsers()
@@ -198,17 +200,46 @@ namespace DoAnMonHoc_Backend.Repository
             return new OkObjectResult("Password changed successfully");
         }
 
-        //public async Task<IActionResult> ResetPasswordAsync(string email)
-        //{
-        //    var user = await GetUserByEmail(email);
-        //    if(user == null)
-        //    {
-        //        return new BadRequestObjectResult("No User Associated with this email!");
-        //    }
-        //    var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-        //    var encodeToken = Encoding.UTF8.GetBytes(token);
-        //    var validToken = WebEncoders.Base64UrlEncode(encodeToken);
-        //    string url = $"https://localhost:7068/ResetPassword?email={email}&token={validToken}";
-        //}
+        public async Task<IActionResult> ForgetPassword(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if(user == null)
+            {
+                return new NotFoundObjectResult("Not Found This Email!!!");
+            }
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var encodedToken = Encoding.UTF8.GetBytes(token);
+            var validToken = WebEncoders.Base64UrlEncode(encodedToken);
+            string url = $"{_configuration["AppUrl"]}/ResetPassword?token={validToken}";
+
+            var body = new EmailModel
+            {
+                To = email,
+                Subject = "Link Reset Password",
+                Body = $"<h1>Follow this url to reset your password <a href={url}>click here</a></h1>",
+            };
+            await _emailService.SendEmail(body);
+
+            return new OkObjectResult("Reset Password Link Has Been Sent");
+        }
+
+        public async Task<IActionResult> ResetPassword(ResetPasswordModel model)
+        {
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                return new NotFoundObjectResult("Not Found This Email!!!");
+            }
+            if(model.Email != model.ConfirmPassword)
+            {
+                return new BadRequestObjectResult("Password doesn't match its confirmation!!!");
+            }
+            var result = await _userManager.ResetPasswordAsync(user, model.Token, model.NewPassword);
+            if (result.Succeeded)
+            {
+                return new OkObjectResult("Password has been reset successfully!!!");
+            }
+            return new BadRequestObjectResult("Something went wrong!!!");
+        }
     }
 }

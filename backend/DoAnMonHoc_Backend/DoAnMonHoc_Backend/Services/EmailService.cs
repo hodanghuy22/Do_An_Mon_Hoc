@@ -14,7 +14,7 @@ namespace DoAnMonHoc_Backend.Services
         {
             _configuration = configuration;
         }
-        public void SendEmail(EmailModel emailModel)
+        public async Task SendEmail(EmailModel emailModel)
         {
             var email = new MimeMessage();
             email.From.Add(MailboxAddress.Parse(_configuration["EmailService:Username"]));
@@ -26,10 +26,11 @@ namespace DoAnMonHoc_Backend.Services
             };
 
             using var smtp = new SmtpClient();
-            smtp.Connect(_configuration["EmailService:Host"], 587, SecureSocketOptions.StartTls);
-            smtp.Authenticate(_configuration["EmailService:Username"], _configuration["EmailService:Password"]);
-            smtp.Send(email);
-            smtp.Disconnect(true);
+            await smtp.ConnectAsync(_configuration["EmailService:Host"], 587, SecureSocketOptions.StartTls);
+            await smtp.AuthenticateAsync(_configuration["EmailService:Username"], _configuration["EmailService:Password"]);
+            await smtp.SendAsync(email);
+            await smtp.DisconnectAsync(true);
+
         }
     }
 }
